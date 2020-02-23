@@ -1,15 +1,14 @@
 const router = require("express").Router();
 
-// Matches with "/api/books"
+// Matches with "/api/favorites"
 router.route("/")
-  .get(booksController.findAll)
-  .post(booksController.create);
+  .get(favoritesController.findAll)
+  .post(favoritesController.create);
 
-// Matches with "/api/books/:id"
+// Matches with "/api/badges/:id"
 router
   .route("/:id")
-  .get(booksController.findById)
-  .put(booksController.update)
-  .delete(booksController.remove);
+  .get(badgesController.findById)
+  .put(badgesController.update)
 
 module.exports = router;
