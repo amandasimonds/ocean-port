@@ -1,19 +1,28 @@
 import React from "react";
-import NavBar from "./components/NavBar";
-import { useAuth0 } from "./react-auth0-spa";
-
+import Login from "./components/Login";
+import { useState } from "react";
 function App() {
-  const { loading } = useAuth0();
 
-  if (loading) {
-    return <div>Loading...</div>;
+  const [userState, setUserState] = useState({
+    email: "",
+    password: "",
+    redirect: null
+  });
+
+  const { email, password, redirect } = userState;
+
+  const handleInputChange = e => {
+    const { email, value } = e.target;
+    setUserState({ ...userState, [email]: value })
   }
 
+  // if (loading) {
+  //   return <div>Loading...</div>;
+  // }
+
   return (
-    <div className="App">
-      <header>
-        <NavBar />
-      </header>
+    <div>
+        <Login />
     </div>
   );
 }
