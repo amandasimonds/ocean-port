@@ -1,5 +1,4 @@
 import React from "react";
-import App from "../App"
 
 const Login = () => {
 
@@ -13,11 +12,11 @@ const Login = () => {
       <h1>Log In</h1>
       <form className="login">
           <div className="form-group">
-            <label for="exampleInputEmail1">Email address</label>
+            <label htmlFor="exampleInputEmail1">Email address</label>
             <input type="email" className="form-control" id="email-input" placeholder="Email"/>
           </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
+          <div className="form-group">
+            <label htmlFor="exampleInputPassword1">Password</label>
             <input type="password" className="form-control" id="password-input" placeholder="Password"/>
           </div>
           <button type="submit" className="btn btn-default">Login</button>

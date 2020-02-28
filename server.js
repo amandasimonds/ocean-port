@@ -11,6 +11,7 @@ if (process.env.NODE_ENV === "production") {
 }
 //middleware
 app.use(express.json());
+
 // We need to use sessions to keep track of our user's login status
 app.use(session({ secret: "hg3hg43k4hvj3kjnp7knup6i8b7ihjv", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
