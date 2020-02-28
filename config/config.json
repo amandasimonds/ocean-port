@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
+    "password": "password",
     "database": "ocean_port_user",
     "host": "127.0.0.1",
     "dialect": "mysql"
@@ -10,14 +10,14 @@
     "username": "root",
     "password": null,
     "database": "database_test",
-    "host": "127.0.0.1",
+    "host": "127.0.0.1:3306",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
     "password": null,
     "database": "database_production",
-    "host": "127.0.0.1",
+    "host": "127.0.0.1:3306",
     "dialect": "mysql"
   }
 }
