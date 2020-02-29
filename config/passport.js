@@ -19,13 +19,13 @@ passport.use(new LocalStrategy(
       // If there's no user with the given email
       if (!dbUser) {
         return done(null, false, {
-          message: "Incorrect email."
+          message: "email not found."
         });
       }
       // If there is a user with the given email, but the password the user gives us is incorrect
       else if (!dbUser.validPassword(password)) {
         return done(null, false, {
-          message: "Incorrect password."
+          message: "incorrect password."
         });
       }
       // If none of the above, return the user
@@ -36,13 +36,14 @@ passport.use(new LocalStrategy(
 
 // In order to help keep authentication state across HTTP requests,
 // Sequelize needs to serialize and deserialize the user
-// Just consider this part boilerplate needed to make it all work
 passport.serializeUser(function(user, cb) {
-  cb(null, user);
+  cb(null, user.id);
 });
 
 passport.deserializeUser(function(obj, cb) {
-  cb(null, obj);
+  db.User.findById(id, function(err, user) {
+  done(err, user);
+  });
 });
 
 // Exporting our configured passport

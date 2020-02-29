@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button, Label } from 'reactstrap';
 
-const Login = (props) => {
+const Signup = (props) => {
 
   return (
     <div>
@@ -32,14 +32,14 @@ const Login = (props) => {
               onChange={props.handleInputChange}
               />
           </div>
-          <Button type="submit" className="btn btn-default" onClick={props.handleLogin}>Login</Button>
+          <Button type="submit" className="btn btn-default" onClick={props.handleLogin}>Sign Up</Button>
         </form>
         <br />
-        <p className="signupLink"> <Link to="/signup">Don't have an account? Launch your account here!</Link></p>
+        <p className="signupLink"> <Link to="/login">already have an account? Launch into MyPort here!</Link></p>
       </div>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Signup;
