@@ -1,5 +1,7 @@
 const router = require("express").Router();
 const userController = require("../../controllers/userController")
+const passport = require("../../config/passport")
+const passportAuth = require("../../config/middleware/isAuthenticated")
 // Matches with "/api/favorites"
 router.route("/login", passport.authenticate("local"))
   .post(userController.login);
