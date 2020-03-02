@@ -1,10 +1,49 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button, Label } from 'reactstrap';
+import UserContext from "../utils/UserContext"
+import API from "../utils/API";
 
-const Login = (props) => {
+function Login() {
+
+  const [userState, setUserState] = useState({
+    email: "",
+    password:""
+  });
+
+const [search, setSearch] = useState("");
+
+ const handleInputChangeEmail = event => {
+    const{name, value}  =  event.target
+    setUserState({
+      email:value,
+      password: ""
+   });
+ }
+
+ const handleInputChangePassword = event => {
+  const{name, value}  =  event.target
+  setUserState({
+    email: userState.email,
+    password: value
+ });
+}
+
+const handleFormSubmit = event => {
+  event.preventDefault();
+
+  console.log(userState.email, userState.password)
+  let loginInfo = {
+    email: userState.email,
+    password: userState.password
+  }
+    API.login(loginInfo).then(function(data){
+      console.log(data)
+    })
+};
 
   return (
+    <UserContext.Provider value={userState}>
     <div>
     <div className="container">
     <div className="row">
@@ -18,8 +57,9 @@ const Login = (props) => {
               className="form-control" 
               id="email-input" 
               placeholder="username" 
-              value={props.email}
-              onChange={props.handleInputChange}
+              name="email"
+              value={userState.email}
+              onChange={handleInputChangeEmail}
               />
 
             <label htmlFor="exampleInputPassword1">Password</label>
@@ -28,17 +68,19 @@ const Login = (props) => {
               className="form-control" 
               id="password-input" 
               placeholder="Password" 
-              value={props.password}
-              onChange={props.handleInputChange}
+              value={userState.password}
+              name="password"
+              onChange={handleInputChangePassword}
               />
           </div>
-          <Button type="submit" className="btn btn-default" onClick={props.handleLogin}>Login</Button>
+          <Button className="btn btn-default" onClick={handleFormSubmit} Link to="/loggedin">Login</Button>
         </form>
         <br />
         <p className="signupLink"> <Link to="/signup">Don't have an account? Launch your account here!</Link></p>
       </div>
       </div>
     </div>
+    </UserContext.Provider>
   );
 };
 
