@@ -1,16 +1,55 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button, Label } from 'reactstrap';
+import UserContext from "../utils/UserContext"
+import API from "../utils/API";
 
-const Signup = (props) => {
+function Signup() {
+
+  const [userState, setUserState] = useState({
+    email: "",
+    password:""
+  });
+
+const [search, setSearch] = useState("");
+
+ const handleInputChangeEmail = event => {
+    const{name, value}  =  event.target
+    setUserState({
+      email:value,
+      password: ""
+   });
+ }
+
+ const handleInputChangePassword = event => {
+  const{name, value}  =  event.target
+  setUserState({
+    email: userState.email,
+    password: value
+ });
+}
+
+const handleFormSubmit = event => {
+  event.preventDefault();
+
+  console.log(userState.email, userState.password)
+  let signupInfo = {
+    email: userState.email,
+    password: userState.password
+  }
+    API.signup(signupInfo).then(function(data){
+      console.log(data)
+    })
+};
 
   return (
+    <UserContext.Provider value={userState}>
     <div>
     <div className="container">
     <div className="row">
       <div className="col-md-6 col-md-offset-3"></div>
-      <h1>Log In</h1>
-      <form className="login">
+      <h1>Sign Up for a MyPort account</h1>
+      <form className="signup">
           <div className="form-group">
             <Label for="username">username</Label>
             <input 
@@ -18,8 +57,9 @@ const Signup = (props) => {
               className="form-control" 
               id="email-input" 
               placeholder="username" 
-              value={props.email}
-              onChange={props.handleInputChange}
+              name="email"
+              value={userState.email}
+              onChange={handleInputChangeEmail}
               />
 
             <label htmlFor="exampleInputPassword1">Password</label>
@@ -28,17 +68,19 @@ const Signup = (props) => {
               className="form-control" 
               id="password-input" 
               placeholder="Password" 
-              value={props.password}
-              onChange={props.handleInputChange}
+              value={userState.password}
+              name="password"
+              onChange={handleInputChangePassword}
               />
           </div>
-          <Button type="submit" className="btn btn-default" onClick={props.handleLogin}>Sign Up</Button>
+          <Button className="btn btn-default" onClick={handleFormSubmit} Link to="/signup">Sign Up</Button>
         </form>
         <br />
-        <p className="signupLink"> <Link to="/login">already have an account? Launch into MyPort here!</Link></p>
+        <p className="loginLink"> <Link to="/login">already have an account? launch into myPort here!</Link></p>
       </div>
       </div>
     </div>
+    </UserContext.Provider>
   );
 };
 
