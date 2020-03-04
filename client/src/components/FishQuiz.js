@@ -4,6 +4,34 @@ import { Button, Label } from 'reactstrap';
 import UserContext from "../utils/UserContext"
 import API from "../utils/API";
 
+var questions = [
+    {
+        title: "Which is the biggest animal",
+        choices: ["whale", "lion", "cheeta", "ant"],
+        correctAnswer: "whale"
+    },
+    {
+        title: "which is capital of USA",
+        choices: ["Dallas", "Denver", "Chicago", "Washington DC"],
+        correctAnswer: "Washington DC"
+    },
+    {
+        title: "Arrays in JavaScript can be used to store:",
+        choices: ["numbers and strings", "other arrays", "booleans", "all of the above"],
+        correctAnswer: "all of the above"
+    },
+    {
+        title: "String values must be enclosed within ____ when being assigned to variables.",
+        choices: ["commas", "curly brackets", "quotes", "parentheses"],
+        correctAnswer: "quotes"
+    },
+    {
+        title: "A very useful tool used during development and debugging for printing content to the debugger is:",
+        choices: ["JavaScript", "terminal/bash", "for loops", "console.log"],
+        correctAnswer: "console.log"
+    }
+];
+
 function FishQuiz() {
     var timeEl = document.querySelector(".iTime")
     var questionsEl = document.querySelector(".questions-rendered");
