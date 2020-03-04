@@ -203,19 +203,19 @@ function FishQuiz() {
     
         questionsEl.appendChild(questionDiv);
     }
-};
+
 
   return (
-    <div class="quizContainer container-fluid well well-lg">
-        <div class="container card">
-            <div id="quiz" class="text-center">
-                <div class="card-header">
+    <div className="quizContainer container-fluid well well-lg">
+        <div className="container card">
+            <div id="quiz" className="text-center">
+                <div className="card-header">
                     <h2>Coding Quiz</h2>
                 </div>
-                <div class="card-body">
+                <div className="card-body">
                     <p id="instructions">Play the Code Quiz and test your knowledge</p>
-                    <h4 class="iTime">Time Remaining: 0</h4>
-                    <hr>
+                    <h4 className="iTime">Time Remaining: 0</h4>
+                    <hr/>
                     <button type="button" class="btnColor btn btn-secondary" id="start">Start Quiz</button>
                     <button type="button" class="btn btn-secondary" id="viewScores" onclick="viewAllScores()">View High
                         Scores</button>
@@ -223,7 +223,7 @@ function FishQuiz() {
                     <p id="choice-response"></p>
                 </div>
                 <div id="initialsDiv" class="text-center" style="display:none">
-                    Enter Initials: <input type="text" onfocus="this.value=''" id="myInitials" value="">
+                    Enter Initials: <input type="text" onfocus="this.value=''" id="myInitials" value="" />
                     <button type="button" class="btnColor btn btn-secondary" id="enterInitials"
                         onclick="getInitials()">Submit</button>
                 </div>
@@ -235,7 +235,10 @@ function FishQuiz() {
             </div>
         </div>
     </div>
+
   );
 
+} 
 
 
+export default FishQuiz;
