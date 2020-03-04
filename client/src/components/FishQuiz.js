@@ -136,8 +136,7 @@ function FishQuiz() {
     }
     
     // Resetting values needed to start a new quiz
-    startBtn.addEventListener('click', function () 
-    {
+    startBtn.addEventListener('click', function () {
         secondsRemaining = 75;
         setTime();
     
@@ -171,7 +170,7 @@ function FishQuiz() {
     
         questionDiv.appendChild(questionText)
     
-        for (i = 0; i < question.choices.length; i++) 
+        for (var i = 0; i < question.choices.length; i++) 
         {
             var option = document.createElement("button");
     
