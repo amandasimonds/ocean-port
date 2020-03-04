@@ -1,0 +1,16 @@
+
+.card-deck .card{
+
+border: 3px solid lightseagreen;
+margin: 5px;
+padding: 10px;
+}
+.card-deck .card img{
+    width: 50px;
+}
+
+.card-title{
+    font-size: 25px;
+    color: lightseagreen;
+}
+
