@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default {
     login: function(loginInfo) {
-        return axios.post("/api/users/login", loginInfo)
+        return axios.post("/api/login", loginInfo)
     },
 
     signup: function(signupInfo) {
