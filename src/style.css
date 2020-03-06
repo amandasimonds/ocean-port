@@ -1,0 +1,21 @@
+
+img.fish {
+  position: absolute;
+  height: 28px;
+  width: 49px;
+  left: 0;
+  top: 0;
+}
+
+.water {
+  background-image: url("/images/ocean.jpg");
+  opacity: 0.15;
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+}
