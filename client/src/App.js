@@ -1,7 +1,8 @@
 import React from "react";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
-import LoggedIn from "./components/LoggedIn"
+import LoggedIn from "./components/LoggedIn";
+import { StoreProvider, useStoreContext } from "./utils/UserContext"
 import Quiz from "./components/Quizes"
 import Home from "./components/Home"
 import Learn from "./components/Learn"
@@ -20,6 +21,7 @@ function App() {
     <div className="homePort">
       <NavPort name="" name1="Tyson"/>
     <BrowserRouter>
+     <StoreProvider>
         <Switch>
               <Route exact path="/" component={Login} />
               <Route exact path="/login" component={Login}  />
@@ -28,12 +30,11 @@ function App() {
               <Route exact path="/quiz" component={Quiz} />
               <Route exact path="/home" component={Home} />
               <Route exact path="/learn" component={Learn} />
-              
-
               {/* <Route exact path="/navbar" component={NavBar} /> */}
               {/* <Route exact path="/profile" component={Profile} /> */}
               {/* <Route component={NoMatch} /> */}
             </Switch>
+      </StoreProvider>
     </BrowserRouter>
     </div>
   );

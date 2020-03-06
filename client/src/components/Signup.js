@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button, Label } from 'reactstrap';
-import UserContext from "../utils/UserContext"
+import { StoreProvider, useStoreContext } from "../utils/UserContext"
 import API from "../utils/API";
 
 function Signup() {
@@ -43,7 +43,7 @@ const handleFormSubmit = event => {
 };
 
   return (
-    <UserContext.Provider value={userState}>
+    <StoreProvider value={userState}>
     <div>
     <div className="container">
     <div className="row">
@@ -80,7 +80,7 @@ const handleFormSubmit = event => {
       </div>
       </div>
     </div>
-    </UserContext.Provider>
+    </StoreProvider>
   );
 };
 

@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button, Label } from 'reactstrap';
-import UserContext from "../utils/UserContext"
+import { StoreProvider, useStoreContext } from "../utils/UserContext"
 import API from "../utils/API";
 
 function Login() {
 
   const [userState, setUserState] = useState({
     email: "",
-    password:""
+    password:"",
+    loggedIn: false,
   });
 
 const [search, setSearch] = useState("");
@@ -37,13 +38,18 @@ const handleFormSubmit = event => {
     email: userState.email,
     password: userState.password
   }
+
+  // dispatch action (type: user_login_attempt)
+  // that will update global state
+  // loggedin: true
+  // redirect new page
     API.login(loginInfo).then(function(data){
       console.log(data)
     })
 };
 
   return (
-    <UserContext.Provider value={userState}>
+    <StoreProvider value={userState}>
     <div>
     <div className="container">
     <div className="row">
@@ -51,7 +57,7 @@ const handleFormSubmit = event => {
       <h1>Log In</h1>
       <form className="login">
           <div className="form-group">
-            <Label for="username">username</Label>
+            <Label for="username">Email</Label>
             <input 
               type="email" 
               className="form-control" 
@@ -80,7 +86,7 @@ const handleFormSubmit = event => {
       </div>
       </div>
     </div>
-    </UserContext.Provider>
+    </StoreProvider>
   );
 };
 
