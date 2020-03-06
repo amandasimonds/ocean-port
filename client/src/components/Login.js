@@ -8,7 +8,8 @@ function Login() {
 
   const [userState, setUserState] = useState({
     email: "",
-    password:""
+    password:"",
+    loggedIn: false,
   });
 
 const [search, setSearch] = useState("");
@@ -37,6 +38,11 @@ const handleFormSubmit = event => {
     email: userState.email,
     password: userState.password
   }
+
+  // dispatch action (type: user_login_attempt)
+  // that will update global state
+  // loggedin: true
+  // redirect new page
     API.login(loginInfo).then(function(data){
       console.log(data)
     })
@@ -51,7 +57,7 @@ const handleFormSubmit = event => {
       <h1>Log In</h1>
       <form className="login">
           <div className="form-group">
-            <Label for="username">username</Label>
+            <Label for="username">Email</Label>
             <input 
               type="email" 
               className="form-control" 
@@ -73,7 +79,7 @@ const handleFormSubmit = event => {
               onChange={handleInputChangePassword}
               />
           </div>
-          <Button className="btn btn-default" onClick={handleFormSubmit} Link to="/loggedin">Login</Button>
+          <Button className="btn btn-default" onClick={handleLogin} Link to="/loggedin">Login</Button>
         </form>
         <br />
         <p className="signupLink"> <Link to="/signup">Don't have an account? Launch your account here!</Link></p>
