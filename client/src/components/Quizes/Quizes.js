@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button, Label } from 'reactstrap';
-import UserContext from "../utils/UserContext"
-import API from "../utils/API";
+import UserContext from "../../utils/UserContext"
+import API from "../../utils/API";
 import { Col, Row, Container } from 'reactstrap';
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, CardDeck } from 'reactstrap';
-import  "../styles/Quizes.css"
-
+import "../../styles/Quizes.css"
 
 function Quiz () {
     return (

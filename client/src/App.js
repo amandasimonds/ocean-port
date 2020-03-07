@@ -2,10 +2,11 @@ import React from "react";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import LoggedIn from "./components/LoggedIn"
-import Quiz from "./components/Quizes"
+import Quiz from "./components/Quizes/Quizes"
 import Home from "./components/Home"
-import Learn from "./components/Learn"
+import Learn from "./components/Learn/Learn"
 import NavPort from "./components/Nav"
+import SharkQuiz from "./components/Quizes/SharkQuiz/SharkWrap.js"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Router, Route, Switch } from "react-router-dom";
@@ -28,6 +29,7 @@ function App() {
               <Route exact path="/quiz" component={Quiz} />
               <Route exact path="/home" component={Home} />
               <Route exact path="/learn" component={Learn} />
+              <Route exact path="/sharkquiz" component={SharkQuiz} />
               
 
               {/* <Route exact path="/navbar" component={NavBar} /> */}

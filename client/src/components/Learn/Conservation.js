@@ -1,0 +1,1 @@
+"Polar Bears are considered vulnerable due to melting ice caps and lack of food due to seal hunting."
