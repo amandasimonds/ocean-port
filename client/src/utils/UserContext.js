@@ -3,7 +3,6 @@ import {
   LOGIN,
   LOADING,
   SIGNUP,
-  AUTHENTICATE,
   ADD_FAVORITE,
   ADD_BADGE,
   ADD_SCORE,
@@ -49,6 +48,13 @@ const reducer = (state, action) => {
         return post._id !== action._id; 
       })
     };
+
+    case ADD_BADGE:
+      return {
+        ...state,
+        badges: [action.post, ...state.favorites],
+        loading: false
+      };
 
   case LOADING:
     return {

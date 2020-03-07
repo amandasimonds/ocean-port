@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button, Label } from 'reactstrap';
 import { StoreProvider, useStoreContext } from "../utils/UserContext"
 import API from "../utils/API";
+import { LOGIN } from "../utils/actions";
 
 function Login() {
 
@@ -12,7 +13,11 @@ function Login() {
     loggedIn: false,
   });
 
-const [search, setSearch] = useState("");
+const [state, dispatch] = useStoreContext();
+
+React.useEffect(() => {
+  console.log("state", state)
+}, [state] )
 
  const handleInputChangeEmail = event => {
     const{name, value}  =  event.target
@@ -39,13 +44,15 @@ const handleFormSubmit = event => {
     password: userState.password
   }
 
-  // dispatch action (type: user_login_attempt)
-  // that will update global state
-  // loggedin: true
-  // redirect new page
     API.login(loginInfo).then(function(data){
-      console.log(data)
-    })
+      console.log("response data", data.data)
+      dispatch({
+        type:LOGIN,
+        loggedIn: true
+      })
+        window.location.href="/home"
+        console.log("user state after dispatch", state)
+      })
 };
 
   return (
@@ -69,6 +76,7 @@ const handleFormSubmit = event => {
               />
 
             <label htmlFor="exampleInputPassword1">Password</label>
+            
             <input 
               type="password" 
               className="form-control" 
@@ -79,7 +87,10 @@ const handleFormSubmit = event => {
               onChange={handleInputChangePassword}
               />
           </div>
-          <Button className="btn btn-default" onClick={handleFormSubmit} Link to="/loggedin">Login</Button>
+          <Button 
+            className="btn btn-default" 
+            onClick={handleFormSubmit} 
+            Link to="/home">Login</Button>
         </form>
         <br />
         <p className="signupLink"> <Link to="/signup">Don't have an account? Launch your account here!</Link></p>
