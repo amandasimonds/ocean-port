@@ -3,6 +3,8 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import LoggedIn from "./components/LoggedIn"
 import Quiz from "./components/Quizes/Quizes"
+import LoggedIn from "./components/LoggedIn";
+import { StoreProvider, useStoreContext } from "./utils/UserContext"
 import Home from "./components/Home"
 import Learn from "./components/Learn/Learn"
 import NavPort from "./components/Nav"
@@ -21,6 +23,7 @@ function App() {
     <div className="homePort">
       <NavPort name="" name1="Tyson"/>
     <BrowserRouter>
+     <StoreProvider>
         <Switch>
               <Route exact path="/" component={Login} />
               <Route exact path="/login" component={Login}  />
@@ -32,10 +35,12 @@ function App() {
               <Route exact path="/sharkquiz" component={SharkQuiz} />
               
 
+
               {/* <Route exact path="/navbar" component={NavBar} /> */}
               {/* <Route exact path="/profile" component={Profile} /> */}
               {/* <Route component={NoMatch} /> */}
             </Switch>
+      </StoreProvider>
     </BrowserRouter>
     </div>
   );
