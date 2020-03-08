@@ -12,7 +12,7 @@ const authMiddleware = require("../config/middleware/isAuthenticated");
     failureFlash: true }),
    function(req, res) {
     // console.log(req.user.dataValues)
-    console.log("from api-routes, sign in successful")
+    console.log("from userRoutes, sign in successful")
     res.json({
       user: req.user,
       loggedIn: true
@@ -22,7 +22,7 @@ const authMiddleware = require("../config/middleware/isAuthenticated");
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
-  router.post("/api/signup", function(req, res) {
+  router.post("/api/users/signup", function(req, res) {
     console.log("post request received", req.user)
     // console.log(req.body)
     db.User.create({
