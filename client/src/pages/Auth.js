@@ -1,7 +1,7 @@
 import React from "react";
 import Login from "../components/Login";
 import Signup from "../components/Signup";
-import { UserConsumer } from '../../context';
+import { UserConsumer } from '../utils/UserContext';
 
 function Auth(props) {
   return (
