@@ -32,6 +32,8 @@ function App() {
               <Route exact path="/home" component={Home} />
               <Route exact path="/learn" component={Learn} />
               <Route exact path="/sharkquiz" component={SharkQuiz} />
+              <Route exact path="/sharkinfo" component={SharkInfo} />
+            
               
 
 
