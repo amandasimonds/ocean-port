@@ -80,7 +80,8 @@ class UserProvider extends Component {
           })
           console.log("logged in true", user)
         } else {
-          console.log("logged in message", user.data.message)
+          console.log("logged in message", user.data.user)
+          // console.log("logged in message", user.data.message)
         }
       })
     }

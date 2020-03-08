@@ -1,6 +1,7 @@
 const express = require("express");
 const session = require("express-session");
 const path = require("path");
+const routes = require("./routes");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const passport = require("./config/passport");
@@ -19,11 +20,13 @@ app.use(passport.session());
 
 var db = require("./models/")
 
-var apiroutes = require("./routes/api-routes")
-apiroutes(app)
+// var apiroutes = require("./routes/userRoutes")
+// apiroutes(app)
 
-var htmlroutes = require("./routes/html-routes")
-htmlroutes(app)
+// var htmlroutes = require("./routes/html-routes")
+// htmlroutes(app)
+
+app.use(routes);
 
 // Send every request to the React app
 // Define any API routes before this runs

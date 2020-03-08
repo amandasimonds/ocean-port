@@ -10,17 +10,14 @@ function Auth(props) {
         <div className="authBox">
           {(props.action === "login") ? (
             <Login
-              username={data.username}
+              email={data.email}
               password={data.password}
               handleInputChange={inputChange}
               handleLogin={handleLogin}
             />
           ) : (
               <Signup
-                firstname={data.firstname}
-                lastname={data.lastname}
                 email={data.email}
-                username={data.username}
                 password={data.password}
                 handleInputChange={inputChange}
                 handleSignup={handleSignup}
