@@ -20,7 +20,7 @@ function bindQuestions() {
     selectedQuestion = QUESTIONS[1]
 }
 bindQuestions();
-class MammalsWrap extends React.Component {
+class ConservationWrap extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -54,4 +54,4 @@ class MammalsWrap extends React.Component {
         );
     }
 }
-export default MammalsWrap;
+export default ConservationWrap;
