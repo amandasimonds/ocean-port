@@ -46,24 +46,24 @@ var quizQuestions = [
         answers: [
             {
                 type: "wrong",
-                content: "5"
+                content: ""
             },
             {
                 type: "wrong",
-                content: "3"
+                content: ""
             },
             {
                 type: "right",
-                content: "6"
+                content: ""
             },
             {
                 type: "wrong",
-                content: "7"
+                content: ""
             },
         ]
     },
     {
-        question: "What sense do sharks use to tell them what direction to go?",
+        question: "?",
         answers: [
             {
                 type: "right",
@@ -84,7 +84,7 @@ var quizQuestions = [
         ]
     },
     {
-        question: "What is the electromagnetic sense?",
+        question: "?",
         answers: [
             {
                 type: "wrong",
