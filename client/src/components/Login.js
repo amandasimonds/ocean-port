@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
-import API from "../utils/API";
 
 function Login(props) {
   return (
