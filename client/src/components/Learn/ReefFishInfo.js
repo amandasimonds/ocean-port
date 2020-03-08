@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Card, CardHeader, CardBody } from "reactstrap";
 import { MammalsWrapper } from "./InfoStyle"
 
-const MammalsInfo = props => {
+const ReefFishInfo = props => {
     return (
         <Col>
             <MammalsWrapper>
@@ -108,6 +108,4 @@ const MammalsInfo = props => {
     )
 }
 
-export default MammalsInfo;
-
-
+export default ReefFishInfo;

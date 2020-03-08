@@ -1,8 +1,10 @@
+//"Polar Bears are considered vulnerable due to melting ice caps and lack of food due to seal hunting."
+
 import React from "react";
 import { Col, Card, CardHeader, CardBody } from "reactstrap";
 import { MammalsWrapper } from "./InfoStyle"
 
-const MammalsInfo = props => {
+const ConservationInfo = props => {
     return (
         <Col>
             <MammalsWrapper>
@@ -108,6 +110,4 @@ const MammalsInfo = props => {
     )
 }
 
-export default MammalsInfo;
-
-
+export default ConservationInfo;

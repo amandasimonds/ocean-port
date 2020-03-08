@@ -1,12 +1,18 @@
 import React from "react";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
+import MammalsInfo from "./components/Learn/MammalsInfo";
+import MammalsQuiz from "./components/Quizes/MammalsQuiz/MammalsWrap.js";
+import SharkQuiz from "./components/Quizes/SharkQuiz/SharkWrap.js";
+import SharkInfo from "./components/Learn/SharkInfo";
+import ReefFishQuiz from "./components/Quizes/ReefFishQuiz/ReefFishWrap.js";
+import ReefFishInfo from "./components/Learn/ReefFishInfo";
+import ConservationQuiz from "./components/Quizes/ConservationQuiz/ConservationWrap.js";
+import ConservationInfo from "./components/Learn/ConservationInfo";
 import Quiz from "./components/Quizes/Quizes"
 import Learn from "./components/Learn/Learn"
 import NavPort from "./components/Nav"
 import Home from "./components/Home"
-import SharkQuiz from "./components/Quizes/SharkQuiz/SharkWrap.js"
-import SharkInfo from "./components/Learn/SharkInfo"
 import UserProvider from "./utils/UserContext"
 import Auth from "./pages/Auth"
 
@@ -33,6 +39,12 @@ function App() {
               <Route exact path="/learn" component={Learn} />
               <Route exact path="/sharkquiz" component={SharkQuiz} />
               <Route exact path="/sharkinfo" component={SharkInfo} />
+              <Route exact path="/mammalsinfo" component={MammalsInfo} />
+              <Route exact path="/mammalsquiz" component={MammalsQuiz} />
+              <Route exact path="/reeffishinfo" component={ReefFishInfo} />
+              <Route exact path="/reeffishquiz" component={ReefFishQuiz} />
+              <Route exact path="/conservationinfo" component={ConservationInfo} />
+              <Route exact path="/conservationquiz" component={ConservationQuiz} />
             
               {/* <Route exact path="/navbar" component={NavBar} /> */}
               {/* <Route exact path="/profile" component={Profile} /> */}
