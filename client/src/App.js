@@ -8,7 +8,9 @@ import Home from "./components/Home";
 import Learn from "./components/Learn/Learn";
 import NavPort from "./components/Nav";
 import SharkQuiz from "./components/Quizes/SharkQuiz/SharkWrap.js";
-import SharkInfo from "./components/Learn/SharkInfo"
+import SharkInfo from "./components/Learn/SharkInfo";
+import MammalsInfo from "./components/Learn/MammalsInfo";
+import MammalsQuiz from "./components/Quizes/MammalsQuiz/MammalsWrap.js";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Router, Route, Switch } from "react-router-dom";
@@ -34,6 +36,8 @@ function App() {
               <Route exact path="/learn" component={Learn} />
               <Route exact path="/sharkquiz" component={SharkQuiz} />
               <Route exact path="/sharkinfo" component={SharkInfo} />
+              <Route exact path="/mammalsinfo" component={MammalsInfo} />
+              <Route exact path="/mammalsquiz" component={MammalsQuiz} />
             
               
 
