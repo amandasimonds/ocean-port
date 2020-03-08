@@ -41,7 +41,7 @@ passport.serializeUser(function(user, cb) {
 });
 
 passport.deserializeUser(function(obj, cb) {
-  // console.log(db.User.id)
+  console.log(db.User.id)
   db.User.findById(user.id, function(err, user) {
   done(err, user);
   });

@@ -78,6 +78,7 @@ class UserProvider extends Component {
             loggedIn: true,
             user: user.data.user
           })
+          console.log("logged in true", user)
         } else {
           console.log("logged in message", user.data.message)
         }

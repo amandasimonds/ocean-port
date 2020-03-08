@@ -19,7 +19,7 @@ module.exports = function(app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", function(req, res) {
-    console.log("post request received")
+    console.log("post request received", req.user)
     // console.log(req.body)
     db.User.create({
       email: req.body.email,

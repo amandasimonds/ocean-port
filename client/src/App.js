@@ -7,7 +7,9 @@ import Learn from "./components/Learn/Learn"
 import NavPort from "./components/Nav"
 import Home from "./components/Home"
 import SharkQuiz from "./components/Quizes/SharkQuiz/SharkWrap.js"
+import SharkInfo from "./components/Learn/SharkInfo"
 import UserProvider from "./utils/UserContext"
+import Auth from "./pages/Auth"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Router, Route, Switch } from "react-router-dom";
@@ -25,7 +27,7 @@ function App() {
      <UserProvider>
         <Switch>
               <Route exact path="/" component={Login} />
-              <Route exact path="/login" component={Login}  />
+              <Route exact path="/login" component={() => <Auth action="login" />}  />
               <Route exact path="/signup" component={Signup}  />
               <Route exact path="/loggedin" component={LoggedIn} />
               <Route exact path="/quiz" component={Quiz} />
@@ -34,9 +36,6 @@ function App() {
               <Route exact path="/sharkquiz" component={SharkQuiz} />
               <Route exact path="/sharkinfo" component={SharkInfo} />
             
-              
-
-
               {/* <Route exact path="/navbar" component={NavBar} /> */}
               {/* <Route exact path="/profile" component={Profile} /> */}
               {/* <Route component={NoMatch} /> */}
