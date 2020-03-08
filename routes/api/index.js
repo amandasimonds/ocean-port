@@ -1,8 +1,7 @@
 const router = require("express").Router();
 const fishRoutes = require("./fish");
-const userRoutes = require("./users")
+const userRoutes = require("../userRoutes")
 
-// Book routes
-router.use("/fish", fishRoutes);
-router.use("/", userRoutes)
+// router.use("/fish", fishRoutes);
+router.use("/users", userRoutes)
 module.exports = router;

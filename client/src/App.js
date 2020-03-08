@@ -1,16 +1,16 @@
 import React from "react";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
-import LoggedIn from "./components/LoggedIn";
-import Quiz from "./components/Quizes/Quizes";
-import { StoreProvider, useStoreContext } from "./utils/UserContext";
-import Home from "./components/Home";
-import Learn from "./components/Learn/Learn";
-import NavPort from "./components/Nav";
-import SharkQuiz from "./components/Quizes/SharkQuiz/SharkWrap.js";
-import SharkInfo from "./components/Learn/SharkInfo";
 import MammalsInfo from "./components/Learn/MammalsInfo";
 import MammalsQuiz from "./components/Quizes/MammalsQuiz/MammalsWrap.js";
+import SharkQuiz from "./components/Quizes/SharkQuiz/SharkWrap.js";
+import SharkInfo from "./components/Learn/SharkInfo";
+import Quiz from "./components/Quizes/Quizes"
+import Learn from "./components/Learn/Learn"
+import NavPort from "./components/Nav"
+import Home from "./components/Home"
+import UserProvider from "./utils/UserContext"
+import Auth from "./pages/Auth"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Router, Route, Switch } from "react-router-dom";
@@ -25,12 +25,11 @@ function App() {
     <div className="homePort">
       <NavPort name="" name1="Tyson"/>
     <BrowserRouter>
-     <StoreProvider>
+     <UserProvider>
         <Switch>
               <Route exact path="/" component={Login} />
-              <Route exact path="/login" component={Login}  />
+              <Route exact path="/login" component={() => <Auth action="login" />}  />
               <Route exact path="/signup" component={Signup}  />
-              <Route exact path="/loggedin" component={LoggedIn} />
               <Route exact path="/quiz" component={Quiz} />
               <Route exact path="/home" component={Home} />
               <Route exact path="/learn" component={Learn} />
@@ -39,14 +38,11 @@ function App() {
               <Route exact path="/mammalsinfo" component={MammalsInfo} />
               <Route exact path="/mammalsquiz" component={MammalsQuiz} />
             
-              
-
-
               {/* <Route exact path="/navbar" component={NavBar} /> */}
               {/* <Route exact path="/profile" component={Profile} /> */}
               {/* <Route component={NoMatch} /> */}
             </Switch>
-      </StoreProvider>
+      </UserProvider>
     </BrowserRouter>
     </div>
   );
