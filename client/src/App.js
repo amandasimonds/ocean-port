@@ -1,14 +1,13 @@
 import React from "react";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
-import LoggedIn from "./components/LoggedIn"
 import Quiz from "./components/Quizes/Quizes"
 import LoggedIn from "./components/LoggedIn";
-import { StoreProvider, useStoreContext } from "./utils/UserContext"
-import Home from "./components/Home"
 import Learn from "./components/Learn/Learn"
 import NavPort from "./components/Nav"
+import Home from "./components/Home"
 import SharkQuiz from "./components/Quizes/SharkQuiz/SharkWrap.js"
+import UserProvider from "./utils/UserContext"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Router, Route, Switch } from "react-router-dom";
@@ -23,7 +22,7 @@ function App() {
     <div className="homePort">
       <NavPort name="" name1="Tyson"/>
     <BrowserRouter>
-     <StoreProvider>
+     <UserProvider>
         <Switch>
               <Route exact path="/" component={Login} />
               <Route exact path="/login" component={Login}  />
@@ -40,7 +39,7 @@ function App() {
               {/* <Route exact path="/profile" component={Profile} /> */}
               {/* <Route component={NoMatch} /> */}
             </Switch>
-      </StoreProvider>
+      </UserProvider>
     </BrowserRouter>
     </div>
   );

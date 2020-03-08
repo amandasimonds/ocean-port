@@ -1,91 +1,118 @@
-import React, { createContext, useReducer, useContext } from "react";
-import {
-  LOGIN,
-  LOADING,
-  SIGNUP,
-  ADD_FAVORITE,
-  ADD_BADGE,
-  ADD_SCORE,
-  UPDATE_FAVORITES,
-  REMOVE_FAVORITE
-} from "./actions";
+import React, { Component } from "react";
+import API from "../utils/API";
 
-const StoreContext = createContext();
-const { Provider } = StoreContext;
+const UserContext = React.createContext();
 
-const reducer = (state, action) => {
-  switch (action.type) {
-  case LOGIN:
-      return {
-          ...state,
-          loggedIn: true,
-      };
+export const UserConsumer = UserContext.Consumer;
 
-      case SIGNUP:
-          return {
-              ...state,
-              loggedIn:true,
-          }
-
-  case ADD_FAVORITE:
-    return {
-      ...state,
-      favorites: [action.post, ...state.favorites],
-      loading: false
-    };
-
-  case UPDATE_FAVORITES:
-    return {
-      ...state,
-      favorites: [...state.favorites],
-      loading: false
-    };
-
-  case REMOVE_FAVORITE:
-    return {
-      ...state,
-      favorites: state.favorites.filter((post) => {
-        return post._id !== action._id; 
-      })
-    };
-
-    case ADD_BADGE:
-      return {
-        ...state,
-        badges: [action.post, ...state.favorites],
-        loading: false
-      };
-
-  case LOADING:
-    return {
-      ...state,
-      loading: true
-    };
-
-  default:
-    return state;
+class UserProvider extends Component {
+  state = {
+    email: "",
+    password: "",
+    loggedIn: false,
+    user: null,
   }
-};
 
-const StoreProvider = ({ value = [], ...props }) => {
-  const [state, dispatch] = useReducer(reducer, {
-    user: {
-      _id: 0,
-      email: "",
-      password: "",
-      loggedIn: false
-    },
-    favorites: [],
-    badges:[],
-    scores:[],
-    loading: false
-  });
+  componentDidMount(){
+    this.isLoggedIn();
+  }
 
-  return <Provider value={[state, dispatch]} {...props} />;
-};
+  handleInputChange = event => {
+    const value = event.target.value;
+    const name = event.target.name;
+    this.setState({
+      [name]: value
+    });
+  };
 
-const useStoreContext = () => {
-  return useContext(StoreContext);
-};
+  handleLogin = event => {
+    event.preventDefault();
+    if (this.state.email && this.state.password) {
+      API.login({
+        email: this.state.email,
+        password: this.state.password
+      }).then(user => {
+        if (user.data.loggedIn) {
+          this.setState({
+            loggedIn: true,
+            user: user.data.user
+          });
+          console.log("log in success", user.data.user)
+          window.location.href = "/home";
+        } else {
+          console.log("something went wrong", user)
+        }
+      });
+    }
+  }
 
-export { StoreProvider, useStoreContext };
+  handleSignup = event => {
+    event.preventDefault();
+    if (this.state.email && this.state.password) {
+      API.signup({
+        email: this.state.email,
+        password: this.state.password
+      }).then(user => {
+        if (user.data.loggedIn) {
+          this.setState({
+            loggedIn:true,
+            user: user.data.user
+          });
+          console.log("sign up success", user.data.user);
+          window.location.href = "/home";
+        } else {
+          console.log("something went wrong with sign up", user.data);
+          this.setState({
+            failureMessage: user.data
+          })
+        }
+      });
+    }
+  }
+
+  isLoggedIn = () => {
+    if (!this.state.loggedIn) {
+      API.isLoggedIn().then(user => {
+        if(user.data.loggedIn) {
+          this.setState({
+            loggedIn: true,
+            user: user.data.user
+          })
+        } else {
+          console.log("logged in message", user.data.message)
+        }
+      })
+    }
+  }
+
+  logout = () => {
+    if (this.state.loggedIn) {
+      API.logout().then(()=> {
+        console.log("logged out success")
+        this.setState({
+          loggedIn:false,
+          user: null
+        })
+      })
+    }
+  }
+
+  render(){
+    const contextValue = {
+      data: this.state,
+      inputChange: this.handleInputChange,
+      handleLogin: this.handleLogin,
+      handleSignup: this.handleSignup,
+      logout: this.logout
+    }
+    return (
+      <UserContext.Provider value = {
+        contextValue
+      }>
+        {this.props.children}
+      </UserContext.Provider>
+    )
+  }
+}
+
+export default UserProvider
