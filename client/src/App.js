@@ -15,7 +15,7 @@ import NavPort from "./components/Nav"
 import Home from "./components/Home"
 import UserProvider from "./utils/UserContext"
 import Auth from "./pages/Auth"
-
+import Badges from './components/Badges'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Router, Route, Switch } from "react-router-dom";
 import "./App.css"
@@ -45,7 +45,7 @@ function App() {
               <Route exact path="/reeffishquiz" component={ReefFishQuiz} />
               <Route exact path="/conservationinfo" component={ConservationInfo} />
               <Route exact path="/conservationquiz" component={ConservationQuiz} />
-            
+              <Route exact path="/Badges" component={Badges} />
               {/* <Route exact path="/navbar" component={NavBar} /> */}
               {/* <Route exact path="/profile" component={Profile} /> */}
               {/* <Route component={NoMatch} /> */}
