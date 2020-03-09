@@ -1,8 +1,14 @@
 import React, { Component } from "react";
 import { Button, Form, FormGroup, Label, Input, FormText, Alert } from 'reactstrap';
 import { Link } from "react-router-dom";
+import UserContext from "../utils/UserContext";
+import API from "../utils/API"
 
 class Signup extends Component {
+     constructor(props){
+       super()
+     }
+
     state = {
         validEmail: false,
         validPassword: false,
@@ -79,6 +85,32 @@ class Signup extends Component {
         }
     }
 
+    handleSignup = event => {
+      event.preventDefault();
+      console.log(this.state.email, this.state.password)
+  
+      alert("sign up button")
+      if (this.state.email && this.state.password) {
+        API.signup({
+          email: this.state.email,
+          password: this.state.password
+        }).then(user => {
+          if (user.data.loggedIn) {
+            this.setState({
+              loggedIn:true,
+              user: user.data.user
+            });
+            console.log("sign up success", user.data.user);
+            window.location.href = "/home";
+          } else {
+            console.log("something went wrong with sign up", user.data);
+            this.setState({
+              failureMessage: user.data
+            })
+          }
+        });
+      }
+    }
     // displays the password message if it exists
     passwordMessage = () => {
         let message = "at least 8 letters, 1 capital & 1 number"
@@ -101,30 +133,33 @@ class Signup extends Component {
 
     render() {
         return (
+     
+
             <div>
                 <h2 className="loginTitle">Signup</h2>
                 <hr />
                 {this.props.message?(
-                    <Alert type="danger">{this.props.message}</Alert>
+                  <Alert type="danger">{this.props.message}</Alert>
                 ): (
-                    <p></p>
+                  <p></p>
                 )}
                 <Form>
                     <FormGroup>
                         <Label for="email">Email</Label>
-                        <Input type="email" name="email" id="email" placeholder="email@email.com" value={this.props.email} onChange={this.props.handleInputChange} valid={this.state.validEmail} />
+                        <Input type="email" name="email" id="email" placeholder="email@email.com" value={this.email} onChange={this.handleInputChange} valid={this.state.validEmail} />
                     </FormGroup>
                     <FormGroup>
                         <Label for="password">Password</Label>
-                        <Input type="password" name="password" id="password" placeholder="password" value={this.props.password} onChange={this.props.handleInputChange} valid={this.state.validPassword} />
+                        <Input type="password" name="password" id="password" placeholder="password" value={this.password} onChange={this.handleInputChange} valid={this.state.validPassword} />
                         <FormText>{this.state.passwordMessage}</FormText>
                     </FormGroup>
-                        <Button onClick={this.props.handleSignup} color="success" block>Signup</Button>
+                        <Button onClick={this.handleSignup} color="success" block>Signup</Button>
                     <p className="signupLink">
                         <Link to="/login">already have an account?  Sign in here</Link>
                     </p>
                 </Form>
             </div>
+          
         );
     }
 }

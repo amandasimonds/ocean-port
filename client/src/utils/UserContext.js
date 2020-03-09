@@ -13,9 +13,9 @@ class UserProvider extends Component {
     user: null,
   }
 
-  componentDidMount(){
-    this.isLoggedIn();
-  }
+  // componentDidMount(){
+  //   this.isLoggedIn();
+  // }
 
   handleInputChange = event => {
     const value = event.target.value;
@@ -27,27 +27,31 @@ class UserProvider extends Component {
 
   handleLogin = event => {
     event.preventDefault();
+    console.log(this.state.email, this.state.password)
     if (this.state.email && this.state.password) {
       API.login({
         email: this.state.email,
         password: this.state.password
       }).then(user => {
-        if (user.data.loggedIn) {
+       // if (user.data.loggedIn) {
           this.setState({
             loggedIn: true,
             user: user.data.user
           });
           console.log("log in success", user.data.user)
           window.location.href = "/home";
-        } else {
-          console.log("something went wrong", user)
-        }
+        // } else {
+        //   console.log("something went wrong", user)
+        // }
       });
     }
   }
 
   handleSignup = event => {
     event.preventDefault();
+    console.log(this.state.email, this.state.password)
+
+    alert("sign up button")
     if (this.state.email && this.state.password) {
       API.signup({
         email: this.state.email,

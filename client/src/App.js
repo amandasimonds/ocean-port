@@ -33,7 +33,7 @@ function App() {
         <Switch>
               <Route exact path="/" component={Login} />
               <Route exact path="/login" component={() => <Auth action="login" />}  />
-              <Route exact path="/signup" component={Signup}  />
+              <Route exact path="/signup" component={() => <Auth action="signup" />}  />
               <Route exact path="/quiz" component={Quiz} />
               <Route exact path="/home" component={Home} />
               <Route exact path="/learn" component={Learn} />
