@@ -108,13 +108,26 @@ class UserProvider extends Component {
     }
   }
 
+  addBadge = () => {
+    if (this.state.loggedIn) {
+      API.addBadge().then(()=> {
+        console.log("add badge")
+        this.setState({
+          badges: "Shark Quiz",
+          score: "100"
+        })
+      })
+    }
+  }
+
   render(){
     const contextValue = {
       data: this.state,
       inputChange: this.handleInputChange,
       handleLogin: this.handleLogin,
       handleSignup: this.handleSignup,
-      logout: this.logout
+      logout: this.logout,
+      addBadge: this.addBadge
     }
     return (
       <UserContext.Provider value = {

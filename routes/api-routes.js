@@ -16,7 +16,6 @@ function apiRoutes(app){
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", function(req, res) {
-    
     // console.log(req.body)
     db.User.create({
       email: req.body.email,
@@ -71,6 +70,21 @@ function apiRoutes(app){
       loggedIn: true
     });
 });
+
+app.post("/api/badges", function(req, res) {
+  console.log("api badges req", req)
+  // db.Badge.create({
+  //   badge: req.body.badge,
+  //   score: req.body.score
+  // })
+    // .then(function() {
+    //   res.redirect(307, "/api/badges");
+    // })
+    // .catch(function(err) {
+    //   res.status(401).json(err);
+    // });
+});
+
 };
 
 module.exports = apiRoutes

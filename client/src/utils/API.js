@@ -19,6 +19,7 @@ export default {
       },
 
       addBadge: function() {
-        return axios.get("/api/badges")
+        // console.log("api add badge request")
+        return axios.post("/api/badges")
       }
 }
