@@ -31,9 +31,16 @@ function apiRoutes(app){
   });
 
   // Route for logging user out
-  app.get("/logout", function(req, res) {
+  app.get("/api/logout", function(req, res) {
     req.logout();
     res.redirect("/");
+  });
+
+  app.get("/unauthorized", function(req, res, next) {
+    res.json({
+      error: req.flash("error"),
+      message: "user not authenticated"
+    });
   });
 
   app.get("/profile", authMiddleware.isLoggedIn, function(req, res, next) {

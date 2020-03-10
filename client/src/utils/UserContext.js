@@ -11,6 +11,8 @@ class UserProvider extends Component {
     password: "",
     loggedIn: false,
     user: null,
+    badges: "",
+    scores: ""
   }
 
   componentDidMount(){
@@ -36,7 +38,9 @@ class UserProvider extends Component {
        // if (user.data.loggedIn) {
           this.setState({
             loggedIn: true,
-            user: user.data
+            user: user.data,
+            badges: "",
+            scores: ""
           });
           console.log("log in success", user.data)
           console.log("usercontext state", this.state)
