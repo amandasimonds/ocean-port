@@ -38,10 +38,6 @@ const MammalsInfo = props => {
                         <br></br>
                         <br></br>
                         <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
                     Baleen whales eat small animals called plancton and have hair like filters in their mouths instead of teeth. These help the whale catch the small animals they eat and push the rest of the water out of their mouths. The largest marine mammal is a blue whale (a baleen whale), averaging 98 feet long and weighing 200 tons!
                     Dolphins and porpoises are similar, porpoises just have smaller bodies and a shorter snout. Both species eat small fish and live in groups called pods.
                     </p2>
@@ -60,7 +56,6 @@ const MammalsInfo = props => {
                         <br></br>
                         <br></br>
                         <br></br>
-                        <br></br>
                     Beaked whales are whales that live in deep ocean water.  They are able to hold their breath for a very long time and do not have to come to the surface for air very often.  They are called beaked whales because they have a snout similar in shape to a dolphin.  They mostly eat deep water squid, but will also eat fish or crustations.  They catch their food but enlarging their throats and sucking their food into their mouths.
                     Blugas and narwals live in the cold waters of the Artic ocean.  They are foragers, they will eat fish, shrimp, crustations.  During the winter the whales migrate slightly south to avoid being underniether the ice cap as it forms.
                     </p2>
@@ -68,9 +63,6 @@ const MammalsInfo = props => {
                     <img src={`${process.env.PUBLIC_URL}/assets/images/manatees.jpg`} alt="picture of a manatees" />
                     </p3>
                     <p2>
-                        <br></br>
-                        <br></br>
-                        <br></br>
                         <br></br>
                         <br></br>
                         <br></br>
