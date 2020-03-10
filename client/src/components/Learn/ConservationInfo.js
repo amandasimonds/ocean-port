@@ -7,7 +7,7 @@ import { ConservationWrapper } from "./InfoStyle"
 const ConservationInfo = props => {
     return (
         <Col>
-            <MammalsWrapper>
+            <ConservationWrapper>
             <Card>
                 <CardHeader>
                     <h1>Let's save the ocean</h1>
@@ -102,7 +102,7 @@ const ConservationInfo = props => {
                     </p2>
                 </CardBody>
             </Card>
-            </MammalsWrapper>
+            </ConservationWrapper>
         </Col>
     )
 }
