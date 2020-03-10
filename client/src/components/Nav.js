@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Collapse,
   Navbar,
@@ -12,10 +12,10 @@ import {
   DropdownMenu,
   DropdownItem,
   NavbarText
-} from 'reactstrap';
+} from "reactstrap";
 
-const NavPort = (props) => {
-    console.log(props)
+const NavPort = props => {
+  console.log(props);
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -28,38 +28,53 @@ const NavPort = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/components/">Scores and Badges</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">Explore</NavLink>
+              <NavLink>Learning</NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 {props.name}
               </DropdownToggle>
               <DropdownMenu right>
-                <DropdownItem>
-                  {props.name1}
-                </DropdownItem>
-                <DropdownItem>
-                  Option 2
-                </DropdownItem>
+                <DropdownItem href="/reeffishinfo">Reef Info</DropdownItem>
+                <DropdownItem href="/sharkinfo">Shark Info</DropdownItem>
+                <DropdownItem href="/mammalsinfo">Mammal Info</DropdownItem>
+                <DropdownItem href="/conservationinfo">Conservation Info</DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem>
-                  Reset
-                </DropdownItem>
+                <DropdownItem>Reset</DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
+            <NavItem>
+              <NavLink>Quizzes</NavLink>
+            </NavItem>
+            <UncontrolledDropdown nav inNavbar>
+              <DropdownToggle nav caret>
+                {props.name}
+              </DropdownToggle>
+              <DropdownMenu right>
+                <DropdownItem href="/reeffishquiz">Reef Quiz</DropdownItem>
+                <DropdownItem href="/sharkquiz">Shark Quiz</DropdownItem>
+                <DropdownItem href="/mammalsquiz">Mammal Quiz</DropdownItem>
+                <DropdownItem href="/conservationquiz">Conservation Quiz</DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem>Reset</DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
+            <NavItem>
+              <NavLink href="/badges/">Scores and Badges</NavLink>
+            </NavItem>
           </Nav>
-          {props.name ?
-          <NavbarText>Welcome back {props.name}</NavbarText>
-          :
-          <NavbarText><button>Sign up now</button></NavbarText>
-          }
+
+          {props.name ? (
+            <NavbarText>Welcome back {props.name}</NavbarText>
+          ) : (
+            <NavbarText>
+              <button>Sign up now</button>
+            </NavbarText>
+          )}
         </Collapse>
       </Navbar>
     </div>
   );
-}
+};
 
 export default NavPort;
