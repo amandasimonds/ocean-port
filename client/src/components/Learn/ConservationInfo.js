@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Col, Card, CardHeader, CardBody } from "reactstrap";
-import { MammalsWrapper } from "./InfoStyle"
+import { ConservationWrapper } from "./InfoStyle"
 
 const ConservationInfo = props => {
     return (
@@ -10,21 +10,18 @@ const ConservationInfo = props => {
             <MammalsWrapper>
             <Card>
                 <CardHeader>
-                    <h1>Let's learn about Marine Mammals</h1>
+                    <h1>Let's save the ocean</h1>
                 </CardHeader>
                 <CardBody>
                     <p1>
-                        <img src={`${process.env.PUBLIC_URL}/assets/images/mammals.jpg`} alt="a picture of all mammals" />
+                        <img src={`${process.env.PUBLIC_URL}/assets/images/Ocean-Pollution.jpg`} alt="a picture of Ocean Pollution" />
                     </p1>
                     <p2>
                         <br></br>
                         <br></br>
                         <br></br>
                         <br></br>
-                    There are five different animals that are in the catagory of sea mammal, they are sea otters, polar bears, cetaceans, pinnipeds, and sirenisans.
-                    Cetaceans are animals like whales, dolphins and porpoises.
-                    Sirenians are animals like manatees and dugongs, also known as sea cows.
-                    Cetaceans consist of over 90 different whales, dolphins, and porpoises: 14 baleen whales, 7 porpoises, 3 sperm whales, 22 beaked whales, 38 dolphins, 4 river dolphins, beluga whales, and narwals.
+                    
                     </p2>
                     <p3>
                     <img src={`${process.env.PUBLIC_URL}/assets/images/bluewhale.jpg`} alt="picture of a bluewhale" />
