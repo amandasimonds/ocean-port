@@ -31,7 +31,7 @@ function App() {
     <BrowserRouter>
      <UserProvider>
         <Switch>
-              <Route exact path="/" component={Login} />
+              <Route exact path="/" component={Home} />
               <Route exact path="/login" component={() => <Auth action="login" />}  />
               <Route exact path="/signup" component={() => <Auth action="signup" />}  />
               <Route exact path="/quiz" component={Quiz} />
@@ -47,7 +47,6 @@ function App() {
               <Route exact path="/conservationquiz" component={ConservationQuiz} />
               <Route exact path="/Badges" component={Badges} />
               {/* <Route exact path="/navbar" component={NavBar} /> */}
-              {/* <Route exact path="/profile" component={Profile} /> */}
               {/* <Route component={NoMatch} /> */}
             </Switch>
       </UserProvider>
