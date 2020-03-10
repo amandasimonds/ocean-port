@@ -8,7 +8,7 @@ function apiRoutes(app){
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
-      console.log(req.user)
+      // console.log(req.user)
     res.json(req.user);
   });
 
@@ -17,7 +17,7 @@ function apiRoutes(app){
   // otherwise send back an error
   app.post("/api/signup", function(req, res) {
     
-    console.log(req.body)
+    // console.log(req.body)
     db.User.create({
       email: req.body.email,
       password: req.body.password
@@ -36,6 +36,13 @@ function apiRoutes(app){
     res.redirect("/");
   });
 
+  app.get("/profile", authMiddleware.isLoggedIn, function(req, res, next) {
+    res.json({
+      user: req.user,
+      loggedIn: true
+    });
+  });
+
   // Route for getting some data about our user to be used client side
   app.get("/api/user_data", function(req, res) {
     if (!req.user) {
@@ -50,6 +57,13 @@ function apiRoutes(app){
       });
     }
   });
-}
+
+  app.get("/api/home", authMiddleware.isLoggedIn, function(req, res, next) {
+    res.json({
+      user: req.user,
+      loggedIn: true
+    });
+});
+};
 
 module.exports = apiRoutes

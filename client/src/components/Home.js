@@ -5,11 +5,16 @@ import { Link } from "react-router-dom"
 import "../styles/Home.css"
 
 const Home = (props) => {
+  
   return (
     <UserConsumer>
       {({ data, logout }) => (
+        
         <div>
+          {console.log(data)}
+          
           {(data.loggedIn) ? (
+            
 
             //if they are logged in, show this page
             <Jumbotron>

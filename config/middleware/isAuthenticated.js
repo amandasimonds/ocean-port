@@ -4,7 +4,7 @@ const auth = {
           console.log('user authenticated');
           next();
       } else{
-          console.log("auth is authenticated - user not authenticated");
+          console.log("user not authenticated");
           res.redirect('/api/users/unauthorized')
       }
   },

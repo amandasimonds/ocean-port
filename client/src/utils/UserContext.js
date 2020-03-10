@@ -13,9 +13,9 @@ class UserProvider extends Component {
     user: null,
   }
 
-  // componentDidMount(){
-  //   this.isLoggedIn();
-  // }
+  componentDidMount(){
+    this.isLoggedIn();
+  }
 
   handleInputChange = event => {
     const value = event.target.value;
@@ -36,9 +36,10 @@ class UserProvider extends Component {
        // if (user.data.loggedIn) {
           this.setState({
             loggedIn: true,
-            user: user.data.user
+            user: user.data
           });
-          console.log("log in success", user.data.user)
+          console.log("log in success", user.data)
+          console.log("usercontext state", this.state)
           window.location.href = "/home";
         // } else {
         //   console.log("something went wrong", user)
