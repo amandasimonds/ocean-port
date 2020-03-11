@@ -19,7 +19,7 @@ const MammalsInfo = props => {
                         <br></br>
                         <br></br>
                         <br></br>
-                    There are five different animals that are in the catagory of sea mammal, they are sea otters, polar bears, cetaceans, pinnipeds, and sirenisans.
+                    There are five different animals that are in the catagory of marine mammal, they are sea otters, polar bears, cetaceans, pinnipeds, and sirenisans.
                     Cetaceans are animals like whales, dolphins and porpoises.
                     Sirenians are animals like manatees and dugongs, also known as sea cows.
                     Cetaceans consist of over 90 different whales, dolphins, and porpoises: 14 baleen whales, 7 porpoises, 3 sperm whales, 22 beaked whales, 38 dolphins, 4 river dolphins, beluga whales, and narwals.

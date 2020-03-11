@@ -1,106 +1,106 @@
 var quizQuestions = [
     {
-        question: "Which on of these is not a marine mammals?",
+        question: "How many tons of trash end up in the ocean?",
         answers: [
             {
                 type: "wrong",
-                content: "Polar Bear"
+                content: "Hundreds of pounds every year"
             },
             {
                 type: "wrong",
-                content: "Humpback Whale"
-            },
-            {
-                type: "wrong",
-                content: "River dolphin"
+                content: "Thousands of tons every year"
             },
             {
                 type: "right",
-                content: "Sea Turtle"
+                content: "Thousands of tons every day"
+            },
+            {
+                type: "wrong",
+                content: "Hundreds of pounds every day"
             }
         ]
     },
     {
-        question: "What are sirenians?",
+        question: "What marine animals are affected by ocean pollutants?",
         answers: [
             {
+                type: "wrong",
+                content: "Sea Birds"
+            },
+            {
+                type: "wrong",
+                content: "Reef Fish"
+            },
+            {
+                type: "wrong",
+                content: "Dolphins and Porpiouses"
+            },
+            {
                 type: "right",
-                content: "They are large blubbery and slow animals that live in warm water on the coast, known commonly as sea cows."
-            },
-            {
-                type: "wrong",
-                content: "They are a type of whale that lives in deep water."
-            },
-            {
-                type: "wrong",
-                content: "A dolphin that lives in large groups called pods."
-            },
-            {
-                type: "wrong",
-                content: "The largest marine mammal in the ocean."
+                content: "all of the above"
             },
         ]
     },
     {
-        question: "All of these are true about polar bears except?",
+        question: "How many people rely on seafood as their primary source of protein?",
         answers: [
             {
-                type: "wrong",
-                content: ""
-            },
-            {
-                type: "wrong",
-                content: ""
-            },
-            {
                 type: "right",
-                content: ""
+                content: "3 billion"
             },
             {
                 type: "wrong",
-                content: ""
+                content: "1 million"
+            },
+            {
+                type: "wrong",
+                content: "500 million"
+            },
+            {
+                type: "wrong",
+                content: "1 billion"
             },
         ]
     },
     {
-        question: "?",
+        question: "What is one way that you can help make sure fish populations stay healthy?",
         answers: [
             {
+                type: "wrong",
+                content: "Do not eat seafood"
+            },
+            {
                 type: "right",
-                content: "smell"
+                content: "check online resources to make sure the seafood you want to eat is sustainable"
             },
             {
                 type: "wrong",
-                content: "sight"
+                content: "There is nothing you can do"
             },
             {
                 type: "wrong",
-                content: "electromagnetic"
-            },
-            {
-                type: "wrong",
-                content: "hearing"
+                content: "You can raise your own seafood in a tank"
             },
         ]
     },
     {
-        question: "?",
+        question: "What things are killing coral reefs?",
         answers: [
             {
                 type: "wrong",
-                content: "It allows sharks to shock other fish near them"
+                content: "climate change"
             },
             {
                 type: "wrong",
-                content: "It allows sharks to attract magnets to them"
+                content: "coral mining for private tanks"
+            },
+            {
+                type: "wrong",
+                content: "polution"
             },
             {
                 type: "right",
-                content: "It allows them to feel magnetic movements made by fish near them"
-            },
-            {
-                type: "wrong",
-                content: "It makes them swim faster"
+                content: "all of the above"
             }
         ]
     }
