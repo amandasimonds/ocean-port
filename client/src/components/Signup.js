@@ -88,8 +88,6 @@ class Signup extends Component {
     handleSignup = event => {
       event.preventDefault();
       console.log(this.state.email, this.state.password)
-  
-      alert("sign up button")
       if (this.state.email && this.state.password) {
         API.signup({
           email: this.state.email,
@@ -101,7 +99,7 @@ class Signup extends Component {
               user: user.data.user
             });
             console.log("sign up success", user.data.user);
-            window.location.href = "/home";
+            window.location.href = "/login";
           } else {
             console.log("something went wrong with sign up", user.data);
             this.setState({

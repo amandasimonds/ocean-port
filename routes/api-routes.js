@@ -16,7 +16,6 @@ function apiRoutes(app){
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", function(req, res) {
-    
     // console.log(req.body)
     db.User.create({
       email: req.body.email,
@@ -31,9 +30,16 @@ function apiRoutes(app){
   });
 
   // Route for logging user out
-  app.get("/logout", function(req, res) {
+  app.get("/api/logout", function(req, res) {
     req.logout();
     res.redirect("/");
+  });
+
+  app.get("/unauthorized", function(req, res, next) {
+    res.json({
+      error: req.flash("error"),
+      message: "user not authenticated"
+    });
   });
 
   app.get("/profile", authMiddleware.isLoggedIn, function(req, res, next) {
@@ -63,6 +69,20 @@ function apiRoutes(app){
       user: req.user,
       loggedIn: true
     });
+});
+
+app.put("/api/badges", function(req, res) {
+  console.log("api badges req", req.body)
+  db.User.update({
+    sharkBadge: true,
+    // complete: req.body.complete
+  }, {
+    where: {
+      id: req.body.id
+    }
+  }).then(function(dbUser) {
+    res.json(dbUser);
+  });
 });
 };
 
