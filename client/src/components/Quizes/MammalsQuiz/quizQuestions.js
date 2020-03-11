@@ -46,61 +46,61 @@ var quizQuestions = [
         answers: [
             {
                 type: "wrong",
-                content: ""
+                content: "They live in the Artic"
             },
             {
                 type: "wrong",
-                content: ""
+                content: "They can swim for days at a time"
             },
             {
                 type: "right",
-                content: ""
+                content: "They only eat fish"
             },
             {
                 type: "wrong",
-                content: ""
+                content: "They have black skin"
             },
         ]
     },
     {
-        question: "?",
+        question: "What is the largest marine mammal?",
         answers: [
             {
                 type: "right",
-                content: "smell"
+                content: "blue whale"
             },
             {
                 type: "wrong",
-                content: "sight"
+                content: "humpback whale"
             },
             {
                 type: "wrong",
-                content: "electromagnetic"
+                content: "manatee"
             },
             {
                 type: "wrong",
-                content: "hearing"
+                content: "narwal"
             },
         ]
     },
     {
-        question: "?",
+        question: "Which of the marine mammal groups has the most number of species?",
         answers: [
             {
                 type: "wrong",
-                content: "It allows sharks to shock other fish near them"
-            },
-            {
-                type: "wrong",
-                content: "It allows sharks to attract magnets to them"
+                content: "Bears"
             },
             {
                 type: "right",
-                content: "It allows them to feel magnetic movements made by fish near them"
+                content: "Cetaceans"
             },
             {
                 type: "wrong",
-                content: "It makes them swim faster"
+                content: "Pinnipeds"
+            },
+            {
+                type: "wrong",
+                content: "Sirenians"
             }
         ]
     }
