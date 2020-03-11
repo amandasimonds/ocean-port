@@ -71,20 +71,19 @@ function apiRoutes(app){
     });
 });
 
-app.post("/api/badges", function(req, res) {
-  console.log("api badges req", req)
-  // db.Badge.create({
-  //   badge: req.body.badge,
-  //   score: req.body.score
-  // })
-    // .then(function() {
-    //   res.redirect(307, "/api/badges");
-    // })
-    // .catch(function(err) {
-    //   res.status(401).json(err);
-    // });
+app.put("/api/badges", function(req, res) {
+  console.log("api badges req", req.body)
+  db.User.update({
+    sharkBadge: true,
+    // complete: req.body.complete
+  }, {
+    where: {
+      id: req.body.id
+    }
+  }).then(function(dbUser) {
+    res.json(dbUser);
+  });
 });
-
 };
 
 module.exports = apiRoutes

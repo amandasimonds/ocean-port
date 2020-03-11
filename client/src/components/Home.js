@@ -7,21 +7,6 @@ import "../styles/Home.css"
 
 const Home = (props) => {
   
-  function addBadge (e) {
-    // e.preventDefault();
-    console.log('The link was clicked.');
-    console.log("state", props)
-    // if (props.state.loggedIn) {
-    //   API.logout().then(()=> {
-    //     console.log("logged out success")
-    //     props.setState({
-    //       loggedIn:false,
-    //       user: null
-    //     })
-    //   })
-    // }
-  }
-  
   return (
     <UserConsumer>
       {({ data, logout, addBadge }) => (
@@ -33,7 +18,7 @@ const Home = (props) => {
             //if they are logged in, show this page
             <Jumbotron>
               <p className="lead">
-              <Button color="success" text="Shark Quiz" onClick={addBadge}>Add Badge Yay</Button>
+              <Button color="success" value="SharkQuiz" data="Shark Quiz" text="Shark Quiz" onClick={addBadge}>Add Badge Yay</Button>
               </p>
               <h1 className="display-3">Hello, welcome to OceanPort, {data.user.email}!</h1>
               <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.</p>
