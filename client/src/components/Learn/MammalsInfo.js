@@ -19,7 +19,7 @@ const MammalsInfo = props => {
                         <br></br>
                         <br></br>
                         <br></br>
-                    There are five different animals that are in the catagory of sea mammal, they are sea otters, polar bears, cetaceans, pinnipeds, and sirenisans.
+                    There are five different animals that are in the catagory of marine mammal, they are sea otters, polar bears, cetaceans, pinnipeds, and sirenisans.
                     Cetaceans are animals like whales, dolphins and porpoises.
                     Sirenians are animals like manatees and dugongs, also known as sea cows.
                     Cetaceans consist of over 90 different whales, dolphins, and porpoises: 14 baleen whales, 7 porpoises, 3 sperm whales, 22 beaked whales, 38 dolphins, 4 river dolphins, beluga whales, and narwals.
@@ -28,10 +28,6 @@ const MammalsInfo = props => {
                     <img src={`${process.env.PUBLIC_URL}/assets/images/bluewhale.jpg`} alt="picture of a bluewhale" />
                     </p3>
                     <p2>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
                         <br></br>
                         <br></br>
                         <br></br>
@@ -60,7 +56,6 @@ const MammalsInfo = props => {
                         <br></br>
                         <br></br>
                         <br></br>
-                        <br></br>
                     Beaked whales are whales that live in deep ocean water.  They are able to hold their breath for a very long time and do not have to come to the surface for air very often.  They are called beaked whales because they have a snout similar in shape to a dolphin.  They mostly eat deep water squid, but will also eat fish or crustations.  They catch their food but enlarging their throats and sucking their food into their mouths.
                     Blugas and narwals live in the cold waters of the Artic ocean.  They are foragers, they will eat fish, shrimp, crustations.  During the winter the whales migrate slightly south to avoid being underniether the ice cap as it forms.
                     </p2>
@@ -68,9 +63,6 @@ const MammalsInfo = props => {
                     <img src={`${process.env.PUBLIC_URL}/assets/images/manatees.jpg`} alt="picture of a manatees" />
                     </p3>
                     <p2>
-                        <br></br>
-                        <br></br>
-                        <br></br>
                         <br></br>
                         <br></br>
                         <br></br>
