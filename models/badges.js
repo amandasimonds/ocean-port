@@ -1,20 +1,16 @@
 // Creating our User model
 module.exports = function(sequelize, DataTypes) {
-  var Badge = sequelize.define("Badge", {
+  var Badges = sequelize.define("Badges", {
     // The badges cannot be null
-    badges: {
+    badge: {
       type: DataTypes.STRING,
       allowNull: false,
-
       },
 
     quizscore: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-    }
-    }
-    
+      // allowNull: false,
+    }}
     )
-    return Badge
-
+    return Badges
 };

@@ -16,7 +16,43 @@ module.exports = function(sequelize, DataTypes) {
     password: {
       type: DataTypes.STRING,
       allowNull: false
-    }
+    },
+
+    sharkBadge: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
+
+    conservationBadge: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
+
+    mammalsBadge: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
+
+    reefBadge: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
+
+    sharkScore: {
+      type: DataTypes.INTEGER
+    },
+
+    conservationScore: {
+      type: DataTypes.INTEGER
+    },
+
+    mammalsScore: {
+      type: DataTypes.INTEGER
+    },
+
+    reefScore: {
+      type: DataTypes.INTEGER
+    },
   });
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
   User.prototype.validPassword = function(password) {

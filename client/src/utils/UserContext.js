@@ -11,6 +11,8 @@ class UserProvider extends Component {
     password: "",
     loggedIn: false,
     user: null,
+    badge: "",
+    quizscore: ""
   }
 
   componentDidMount(){
@@ -36,7 +38,9 @@ class UserProvider extends Component {
        // if (user.data.loggedIn) {
           this.setState({
             loggedIn: true,
-            user: user.data
+            user: user.data,
+            badges: "",
+            quizscore: ""
           });
           console.log("log in success", user.data)
           console.log("usercontext state", this.state)
@@ -51,8 +55,6 @@ class UserProvider extends Component {
   handleSignup = event => {
     event.preventDefault();
     console.log(this.state.email, this.state.password)
-
-    alert("sign up button")
     if (this.state.email && this.state.password) {
       API.signup({
         email: this.state.email,
@@ -104,13 +106,31 @@ class UserProvider extends Component {
     }
   }
 
+  addBadge = (event) => {
+    // event.preventDefault();
+    console.log(this.state)
+      console.log("Adding a badge")
+      API.addBadge({
+        id: this.state.user.id,
+        sharkBadge: true,
+      }).then((user)=> {
+        this.setState({
+          user: user.data,
+          badge: "Shark Quiz",
+          quizscore: 100
+        })
+        console.log("addbadge user", this.state)
+      })
+  }
+
   render(){
     const contextValue = {
       data: this.state,
       inputChange: this.handleInputChange,
       handleLogin: this.handleLogin,
       handleSignup: this.handleSignup,
-      logout: this.logout
+      logout: this.logout,
+      addBadge: this.addBadge
     }
     return (
       <UserContext.Provider value = {

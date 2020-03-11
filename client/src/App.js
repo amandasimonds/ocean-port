@@ -36,6 +36,7 @@ function App() {
               <Route exact path="/signup" component={() => <Auth action="signup" />}  />
               <Route exact path="/quiz" component={Quiz} />
               <Route exact path="/home" component={Home} />
+              <Route exact path="/api/users/unauthorized" component={Home} />
               <Route exact path="/learn" component={Learn} />
               <Route exact path="/sharkquiz" component={SharkQuiz} />
               <Route exact path="/sharkinfo" component={SharkInfo} />

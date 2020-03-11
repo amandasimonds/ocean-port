@@ -16,5 +16,10 @@ export default {
     
       logout: function() {
         return axios.get("/api/logout")
+      },
+
+      addBadge: function(badgeInfo) {
+        // console.log("api add badge request")
+        return axios.put("/api/badges", badgeInfo)
       }
 }
