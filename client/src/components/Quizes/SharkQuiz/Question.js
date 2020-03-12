@@ -1,35 +1,49 @@
 import React from 'react';
-import { Button } from 'reactstrap';
+import Button from 'react-bootstrap/Button';
 import './style.css';
 
 class Question extends React.Component {
+
+    constructor() {
+        super();
+    }
+
+    handleChange = (e) => {
+        this.props.loadQuestions();
+        this.props.validateAnswer(e)
+    }
+
     render() {
+        
         let listItems = []
-        if (Object.keys(this.props.question).length > 0) {
-            listItems = this.props.question.choices.map((choice) =>
+        if (Object.keys(this.props.currentQuestion).length > 0) {
+            listItems = this.props.currentQuestion.answers.map((choice) =>
                 <ul>
-                    <Button key={choice}>
-                        {choice}
+                    <Button variant="primary" key={choice} onClick={() => this.handleChange(choice)}>
+                        {choice.content}
                     </Button>
                 </ul>
             );
         }
-        if (this.props.question.hasOwnProperty('question')) {
+
+        if (this.props.currentQuestion.hasOwnProperty('question')) {
             return (
                 <div>
                     <div className="row">
                         <div className="col-md-12 text-center">
-                            <span>{this.props.question.question}</span>
+                            <span>
+                                {this.props.currentQuestion.question}
+                            </span>
+                            <br/><br/>
                             <span>{listItems}</span>
                         </div>
                     </div>
                 </div>
             );
         } else {
-            return (
-                <div></div>
-            );
+            return (<div></div>);
         }
     }
 }
+
 export default Question;

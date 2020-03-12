@@ -10,6 +10,7 @@ import ReefFishInfo from "./components/Learn/ReefFishInfo";
 import ConservationQuiz from "./components/Quizes/ConservationQuiz/ConservationWrap.js";
 import ConservationInfo from "./components/Learn/ConservationInfo";
 import Quiz from "./components/Quizes/Quizes"
+import SharkWrap from "./components/Quizes/SharkQuiz/SharkWrap.js"
 import Learn from "./components/Learn/Learn"
 import NavPort from "./components/Nav"
 import Home from "./components/Home"
