@@ -1,106 +1,106 @@
 var quizQuestions = [
     {
-        question: "Which on of these is not a marine mammals?",
+        question: "How does coral stick together in groups?",
         answers: [
             {
                 type: "wrong",
-                content: "Polar Bear"
-            },
-            {
-                type: "wrong",
-                content: "Humpback Whale"
-            },
-            {
-                type: "wrong",
-                content: "River dolphin"
+                content: "a sticky gel"
             },
             {
                 type: "right",
-                content: "Sea Turtle"
+                content: "calcium carbonite, bone like substance"
+            },
+            {
+                type: "wrong",
+                content: "arm like extentions"
+            },
+            {
+                type: "wrong",
+                content: "they are not connected to eachother, just the rocks they are on top of"
             }
         ]
     },
     {
-        question: "What are sirenians?",
+        question: "What do coral eat?",
         answers: [
             {
+                type: "wrong",
+                content: "They eat sunlight"
+            },
+            {
+                type: "wrong",
+                content: "They eat the rocks they sit on"
+            },
+            {
                 type: "right",
-                content: "They are large blubbery and slow animals that live in warm water on the coast, known commonly as sea cows."
+                content: "They eat the energy that the algea inside of them make from the sun."
             },
             {
                 type: "wrong",
-                content: "They are a type of whale that lives in deep water."
-            },
-            {
-                type: "wrong",
-                content: "A dolphin that lives in large groups called pods."
-            },
-            {
-                type: "wrong",
-                content: "The largest marine mammal in the ocean."
+                content: "They eat ocean water."
             },
         ]
     },
     {
-        question: "All of these are true about polar bears except?",
+        question: "How many other animals live in a coral reef?",
         answers: [
             {
                 type: "wrong",
-                content: ""
+                content: "fish"
             },
             {
                 type: "wrong",
-                content: ""
+                content: "crustaceans"
+            },
+            {
+                type: "wrong",
+                content: "worms"
             },
             {
                 type: "right",
-                content: ""
-            },
-            {
-                type: "wrong",
-                content: ""
+                content: "all of the above"
             },
         ]
     },
     {
-        question: "?",
+        question: "How many butterfly fish species are there?",
         answers: [
             {
                 type: "right",
-                content: "smell"
+                content: "100"
             },
             {
                 type: "wrong",
-                content: "sight"
+                content: "50"
             },
             {
                 type: "wrong",
-                content: "electromagnetic"
+                content: "200"
             },
             {
                 type: "wrong",
-                content: "hearing"
+                content: "10"
             },
         ]
     },
     {
-        question: "?",
+        question: "How large can triggerfish get?",
         answers: [
             {
                 type: "wrong",
-                content: "It allows sharks to shock other fish near them"
+                content: "5 feet"
             },
             {
                 type: "wrong",
-                content: "It allows sharks to attract magnets to them"
+                content: "10 inches"
+            },
+            {
+                type: "wrong",
+                content: "3 inches"
             },
             {
                 type: "right",
-                content: "It allows them to feel magnetic movements made by fish near them"
-            },
-            {
-                type: "wrong",
-                content: "It makes them swim faster"
+                content: "20 inches"
             }
         ]
     }

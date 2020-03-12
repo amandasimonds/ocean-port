@@ -16,7 +16,7 @@ const ReefFishInfo = props => {
                     </p1>
                     <p2>
                         <br></br>
-                    A coral reef is a collection of living coral that form a community that build on rocks in warm, shallow waters.  The coral connect to each other using calcium carbonite, similar to calcium found in our bones.  They rely on the sun for their energy and food.  You can think of coral reefs as the rainforests of the ocean.  25% or 1/4 of the animals that live in the ocean, live on a coral reef.  Reefs provide a home, not only to coral but also fish, mollusks, worms, crustaceans, echinoderms, sponges, tunicates and other cnidarians.
+                    A coral reef is a collection of living coral that form a community that build on rocks in warm, shallow waters.  The coral connect to each other using calcium carbonite, similar to calcium found in our bones.  Coral live off of the energy from algea that live inside of their polyps. The algea use sun for their energy and food.  You can think of coral reefs as the rainforests of the ocean.  25% or 1/4 of the animals that live in the ocean, live on a coral reef.  Reefs provide a home, not only to coral but also fish, mollusks, worms, crustaceans, echinoderms, sponges, tunicates and other cnidarians.
                     </p2>
                     <p3>
                     <img src={`${process.env.PUBLIC_URL}/assets/images/blacktailbutterfly.jpg`} alt="picture of a blacktailbutterfly fish" />
@@ -27,7 +27,7 @@ const ReefFishInfo = props => {
                         <br></br>
                         <br></br>
                         <br></br>
-                    Let's explore the fish that live on the reef!  These beautiful fish are called blacktail butterfly, and they are native to the Red Sea and in the Mediterranean off the coast of Israel.  Adults generally live in pairs are patrol a particular territory, while the younger fish live in the coral branches and are not territorial.  They eat coral polyps and sea anemone tentacles.
+                    Let's explore the fish that live on the reef!  One type of fish that lives on coral reefs are butterfly fish, there are over 100 different species.  These beautiful fish are called blacktail butterfly, and they are native to the Red Sea and in the Mediterranean off the coast of Israel.  Adults generally live in pairs are patrol a particular territory, while the younger fish live in the coral branches and are not territorial.  They eat coral polyps and sea anemone tentacles.
                     </p2>
                     <p1>
                     <img src={`${process.env.PUBLIC_URL}/assets/images/maskedbutterflyfish.jpg`} alt="picture of a masked butterfly fish" />
