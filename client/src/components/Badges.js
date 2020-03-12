@@ -3,20 +3,30 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 
-export default class Badges extends React.Component{
-    render(props){
+const Badges = (props) => {
+
+// }
+// export default class Badges extends React.Component{
+    // render(props){
         return(
             <div>
-            
+{/* <h1>Welcome {props.state.email}</h1> */}
  <Row style={{justifyContent:'center'}}>
  <Card style={{ width: '18rem'}}>
   <Card.Body>
-    <Card.Title>Quiz 1</Card.Title>
+
+    {/*check the state of the user */}
+    <Button onClick={props.checkState}>Check State</Button>
+
+    <Card.Title>Shark Quiz</Card.Title>
     <Card.Text>
         
-      Score: <span className='score'></span> 
+        {/* Score: <span className='score'>{this.state.sharkQuiz}</span>  */}
     </Card.Text>
-    <Button variant="primary">Back To Quiz</Button>
+
+    {/* button to simulate adding a badge to this card */}
+    <Button variant="primary" onClick={props.addBadge}>Shark Badge</Button>
+
   </Card.Body>
 </Card>
 <Card style={{ width: '18rem'}}>
@@ -60,4 +70,6 @@ export default class Badges extends React.Component{
             </div>
         )
     }
-}
+// }
+
+export default Badges

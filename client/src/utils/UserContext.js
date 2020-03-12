@@ -25,6 +25,11 @@ class UserProvider extends Component {
     });
   };
 
+  checkState = event => {
+    event.preventDefault();
+    console.log(this.state)
+  }
+
   handleLogin = event => {
     event.preventDefault();
     console.log("handle login", this.state.email, this.state.password)
@@ -128,7 +133,8 @@ class UserProvider extends Component {
       handleLogin: this.handleLogin,
       handleSignup: this.handleSignup,
       logout: this.logout,
-      addBadge: this.addBadge
+      addBadge: this.addBadge,
+      checkState: this.checkState
     }
     return (
       <UserContext.Provider value = {
