@@ -2,8 +2,9 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
+
 export default class Badges extends React.Component{
-    render(){
+    render(props){
         return(
             <div>
             

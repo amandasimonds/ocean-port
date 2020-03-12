@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Axlelee87!",
+    "password": "root",
     "database": "ocean_port_user",
     "host": "127.0.0.1",
     "dialect": "mysql"

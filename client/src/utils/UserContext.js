@@ -11,8 +11,6 @@ class UserProvider extends Component {
     password: "",
     loggedIn: false,
     user: null,
-    badge: "",
-    quizscore: ""
   }
 
   componentDidMount(){
@@ -29,7 +27,7 @@ class UserProvider extends Component {
 
   handleLogin = event => {
     event.preventDefault();
-    console.log(this.state.email, this.state.password)
+    console.log("handle login", this.state.email, this.state.password)
     if (this.state.email && this.state.password) {
       API.login({
         email: this.state.email,
@@ -107,17 +105,17 @@ class UserProvider extends Component {
   }
 
   addBadge = (event) => {
-    // event.preventDefault();
-    console.log(this.state)
-      console.log("Adding a badge")
+    event.preventDefault();
+    console.log("addBadge", this.state)
       API.addBadge({
         id: this.state.user.id,
         sharkBadge: true,
-      }).then((user)=> {
+      }).then(user=> {
         this.setState({
-          user: user.data,
-          badge: "Shark Quiz",
-          quizscore: 100
+          email: this.state.email,
+          loggedIn: true,
+          sharkBadge: true,
+          sharkQuiz: 100,
         })
         console.log("addbadge user", this.state)
       })
