@@ -20,19 +20,16 @@ app.use(passport.session());
 
 var db = require("./models/")
 
-// var apiroutes = require("./routes/userRoutes")
-// apiroutes(app)
-
-// var htmlroutes = require("./routes/html-routes")
-// htmlroutes(app)
+var apiroutes = require("./routes/api-routes")
+apiroutes(app)
 
 routes(app);
 
 // Send every request to the React app
 // Define any API routes before this runs
-// app.get("*", function(req, res) {
-//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
-// });
+app.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 
 db.sequelize.sync().then(function(){
   app.listen(PORT, function() {
