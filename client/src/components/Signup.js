@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import { Button, Form, FormGroup, Label, Input, FormText, Alert } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, FormText, Alert, Jumbotron } from 'reactstrap';
 import { Link } from "react-router-dom";
 import UserContext from "../utils/UserContext";
 import API from "../utils/API"
 
 class Signup extends Component {
-     constructor(props){
-       super()
-     }
+    constructor(props) {
+        super()
+    }
 
     state = {
         validEmail: false,
@@ -55,8 +55,8 @@ class Signup extends Component {
         }
     }
 
-     // checks is password meets regex test (at least 8 letters, 1 capital and 1 number)
-     validatePassword = ()=> {
+    // checks is password meets regex test (at least 8 letters, 1 capital and 1 number)
+    validatePassword = () => {
         let strongPassword = new RegExp(/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/);
         let valid = strongPassword.test(this.props.password);
         if (!this.state.validPassword && valid) {
@@ -86,28 +86,28 @@ class Signup extends Component {
     }
 
     handleSignup = event => {
-      event.preventDefault();
-      console.log(this.state.email, this.state.password)
-      if (this.state.email && this.state.password) {
-        API.signup({
-          email: this.state.email,
-          password: this.state.password
-        }).then(user => {
-          if (user.data.loggedIn) {
-            this.setState({
-              loggedIn:true,
-              user: user.data.user
+        event.preventDefault();
+        console.log(this.state.email, this.state.password)
+        if (this.state.email && this.state.password) {
+            API.signup({
+                email: this.state.email,
+                password: this.state.password
+            }).then(user => {
+                if (user.data.loggedIn) {
+                    this.setState({
+                        loggedIn: true,
+                        user: user.data.user
+                    });
+                    console.log("sign up success", user.data.user);
+                    window.location.href = "/login";
+                } else {
+                    console.log("something went wrong with sign up", user.data);
+                    this.setState({
+                        failureMessage: user.data
+                    })
+                }
             });
-            console.log("sign up success", user.data.user);
-            window.location.href = "/login";
-          } else {
-            console.log("something went wrong with sign up", user.data);
-            this.setState({
-              failureMessage: user.data
-            })
-          }
-        });
-      }
+        }
     }
     // displays the password message if it exists
     passwordMessage = () => {
@@ -126,36 +126,59 @@ class Signup extends Component {
             this.setState({
                 passwordMessage: ""
             });
-        } 
+        }
     }
 
     render() {
         return (
-     
+
             <div>
-                <h2 className="loginTitle">Signup</h2>
-                <hr />
-                {this.props.message?(
-                  <Alert type="danger">{this.props.message}</Alert>
-                ): (
-                  <p></p>
-                )}
-                <Form>
-                    <FormGroup>
-                        <Label for="email">Email</Label>
-                        <Input type="email" name="email" id="email" placeholder="email@email.com" value={this.email} onChange={this.handleInputChange} valid={this.state.validEmail} />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="password">Password</Label>
-                        <Input type="password" name="password" id="password" placeholder="password" value={this.password} onChange={this.handleInputChange} valid={this.state.validPassword} />
-                        <FormText>{this.state.passwordMessage}</FormText>
-                    </FormGroup>
-                        <Button onClick={this.handleSignup} color="success" block>Signup</Button>
-                    <p className="signupLink">
-                        <Link to="/login">already have an account?  Sign in here</Link>
-                    </p>
+                <Jumbotron
+                style={{
+                    padding: "5em"
+                  }}>
+
+                    <h2 className="loginTitle">Signup</h2>
+                    <hr />
+                    <Form>
+                        <FormGroup>
+                            <Label for="email"><h3>Email</h3></Label>
+                            <Input type="email" name="email" id="email" 
+                            placeholder="email@email.com" 
+                            style={{ marginTop: ".5em" }}
+                            value={this.email} 
+                            onChange={this.handleInputChange} 
+                            valid={this.state.validEmail} />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="password"><h3>Password</h3></Label>
+                            <Input type="password" name="password" 
+                            id="password" placeholder="password" 
+                            style={{ marginTop: ".5em" }}
+                            value={this.password} 
+                            onChange={this.handleInputChange} 
+                            valid={this.state.validPassword} />
+                        </FormGroup>
+
+                        <br></br>
+
+                        <Button onClick={this.handleSignup}
+                            color="success"
+                            style={{ margin: "1em", padding: "1em", borderRadius: "1em" }}>
+                            Signup
+                        </Button>
+
+                        <Link to="/login">
+                            <Button
+                                color="primary"
+                                style={{ margin: "1em", padding: "1em", borderRadius: "1em"}}>
+                                Already have an account?  Sign in here
+                            </Button>
+                        </Link>
+                    
                 </Form>
-            </div>
+                </Jumbotron>
+            </div >
           
         );
     }
