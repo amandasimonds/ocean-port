@@ -4,6 +4,8 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Question from './Question';
 import quizQuestions from './quizQuestions.js';
+import UserConsumer from "../../../utils/UserContext"
+import {UserContext} from "../../../utils/UserContext"
 
 const QUESTIONS = quizQuestions;
 const YES = "yes";
@@ -80,6 +82,11 @@ class SharkWrap extends React.Component {
         }
     }
 
+    componentDidMount(){
+        let user = this.UserContext
+        console.log("sharkquiz", user)
+    };
+
     render() {
 
         let resultSpan = null;
@@ -90,6 +97,9 @@ class SharkWrap extends React.Component {
         }
 
         return (
+            <UserConsumer>
+                
+
             <div className="App">
                <div className="title-div">
                     <span className="quiz-title">Quiz about Shark</span>
@@ -122,13 +132,19 @@ class SharkWrap extends React.Component {
                <div className="display-none" id="timeupDiv">
                    <Col xs={{ span: 4, offset: 4 }}>
                        <span className="text-danger">
-                          Time up!!!
+                          Time's up!
                        </span>
                        <br/>
                        <span>Your final score is {this.state.score}</span>
+                      
                     </Col>
+                    {({ data, logout, addBadge }) => (
+                <Button color="success" value="SharkQuiz" data="Shark Quiz" text="Shark Quiz" onClick={addBadge}>Add Badge Yay</Button>
+                )}
                </div>
             </div>
+            
+            </UserConsumer>
         );
     }
 }

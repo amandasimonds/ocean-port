@@ -7,6 +7,7 @@ export const UserConsumer = UserContext.Consumer;
 
 class UserProvider extends Component {
   state = {
+    isBadge: false,
     email: "",
     password: "",
     loggedIn: false,
@@ -43,7 +44,8 @@ class UserProvider extends Component {
             loggedIn: true,
             user: user.data,
             badges: "",
-            quizscore: ""
+            quizscore: "",
+            sharkBadge: true
           });
           console.log("log in success", user.data)
           console.log("usercontext state", this.state)
@@ -82,15 +84,17 @@ class UserProvider extends Component {
 
   isLoggedIn = () => {
     if (!this.state.loggedIn) {
-      API.isLoggedIn().then(user => {
-        if(user.data.loggedIn) {
+      API.isLoggedIn().then(response => {
+        if(response.data.loggedIn) {
+          console.log("loggedIn badge", response.data.user.sharkBadge)
           this.setState({
             loggedIn: true,
-            user: user.data.user
+            user: response.data.user,
+            isBadge: response.data.user.sharkBadge
           })
-          console.log("logged in true", user)
+          console.log("logged in true", response)
         } else {
-          console.log("logged in message", user.data.user)
+          console.log("logged in message", response.data.user)
           // console.log("logged in message", user.data.message)
         }
       })
@@ -109,21 +113,27 @@ class UserProvider extends Component {
     }
   }
 
-  addBadge = (event) => {
-    event.preventDefault();
-    console.log("addBadge", this.state)
+  addBadge = (data) => { 
+    
+    console.log("addBadge", data)
+    
+    console.log(data.user.sharkBadge)
+    // let badgeType = event.target.dataset.badgeId;
+    // // console.log(badgeId)
       API.addBadge({
         id: this.state.user.id,
         sharkBadge: true,
       }).then(user=> {
+        console.log("add badge", user)
         this.setState({
-          email: this.state.email,
-          loggedIn: true,
-          sharkBadge: true,
-          sharkQuiz: 100,
+          isBadge: user.data.sharkBadge
         })
-        console.log("addbadge user", this.state)
-      })
+        // this.setState({
+        //   email: this.state.email,
+        //   loggedIn: true,
+        // })
+    //     console.log("addbadge user", this.state)
+     })
   }
 
   render(){
@@ -134,8 +144,10 @@ class UserProvider extends Component {
       handleSignup: this.handleSignup,
       logout: this.logout,
       addBadge: this.addBadge,
-      checkState: this.checkState
+      checkState: this.checkState,
+      isLoggedIn: this.isLoggedIn
     }
+    
     return (
       <UserContext.Provider value = {
         contextValue
