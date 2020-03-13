@@ -13,6 +13,7 @@ import {
   DropdownItem,
   NavbarText
 } from "reactstrap";
+import "../styles/Nav.css";
 
 const NavPort = props => {
   console.log(props);
@@ -62,13 +63,7 @@ const NavPort = props => {
             </NavItem>
           </Nav>
 
-          {props.name ? (
-            <NavbarText>Welcome back {props.name}</NavbarText>
-          ) : (
-            <NavbarText>
-              <button>Sign up now</button>
-            </NavbarText>
-          )}
+         
         </Collapse>
       </Navbar>
     </div>
