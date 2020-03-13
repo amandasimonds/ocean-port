@@ -102,7 +102,7 @@ class SharkWrap extends React.Component {
 
             <div className="App">
                <div className="title-div">
-                    <span className="quiz-title">Quiz about Shark</span>
+                    <span className="quiz-title">Shark Quiz</span>
                </div>
                <p className="details">Let's test your knowledge</p>
                <span className="time-style">Time Remaining: {this.state.seconds}</span>
