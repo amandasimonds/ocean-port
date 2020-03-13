@@ -18,8 +18,23 @@ export default {
         return axios.get("/api/logout")
       },
 
-      addBadge: function(badgeInfo) {
+      sharkBadge: function(badgeInfo) {
         // console.log("api add badge request")
-        return axios.put("/api/badges", badgeInfo)
+        return axios.put("/api/sharkbadge", badgeInfo)
+      },
+
+      conservationBadge: function(badgeInfo) {
+        // console.log("api add badge request")
+        return axios.put("/api/conservationbadge", badgeInfo)
+      },
+
+      reefBadge: function(badgeInfo) {
+        // console.log("api add badge request")
+        return axios.put("/api/reefbadge", badgeInfo)
+      },
+
+      mammalsBadge: function(badgeInfo) {
+        // console.log("api add badge request")
+        return axios.put("/api/mammalsbadge", badgeInfo)
       }
 }

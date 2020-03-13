@@ -71,11 +71,49 @@ function apiRoutes(app){
     });
 });
 
-app.put("/api/badges", function(req, res) {
+app.put("/api/sharkbadge", function(req, res) {
   console.log("api badges req", req.body)
   db.User.update({
     sharkBadge: true,
-    // complete: req.body.complete
+  }, {
+    where: {
+      id: req.body.id
+    }
+  }).then(function(dbUser) {
+    res.json(req.body);
+  });
+});
+
+app.put("/api/mammalsbadge", function(req, res) {
+  console.log("api badges req", req.body)
+  db.User.update({
+    mammalsBadge: true,
+  }, {
+    where: {
+      id: req.body.id
+    }
+  }).then(function(dbUser) {
+    res.json(req.body);
+  });
+});
+
+app.put("/api/conservationbadge", function(req, res) {
+  console.log("api badges req", req.body)
+  db.User.update({
+    conservationBadge: true,
+  }, {
+    where: {
+      id: req.body.id
+    }
+  }).then(function(dbUser) {
+    res.json(req.body);
+  });
+});
+
+app.put("/api/reefbadge", function(req, res) {
+  console.log("api badges req", req.body)
+  db.User.update({
+    reefBadge: true,
   }, {
     where: {
       id: req.body.id

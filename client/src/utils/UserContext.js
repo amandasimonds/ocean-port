@@ -7,7 +7,10 @@ export const UserConsumer = UserContext.Consumer;
 
 class UserProvider extends Component {
   state = {
-    isBadge: false,
+    isSharkBadge: false,
+    isConservationBadge: false,
+    isReefBadge: false,
+    isMammalsBadge: false,
     email: "",
     password: "",
     loggedIn: false,
@@ -39,20 +42,16 @@ class UserProvider extends Component {
         email: this.state.email,
         password: this.state.password
       }).then(user => {
-       // if (user.data.loggedIn) {
           this.setState({
             loggedIn: true,
             user: user.data,
-            badges: "",
-            quizscore: "",
-            sharkBadge: true
+            // badges: "",
+            // quizscore: "",
+            // sharkBadge: true
           });
           console.log("log in success", user.data)
           console.log("usercontext state", this.state)
           window.location.href = "/home";
-        // } else {
-        //   console.log("something went wrong", user)
-        // }
       });
     }
   }
@@ -65,19 +64,12 @@ class UserProvider extends Component {
         email: this.state.email,
         password: this.state.password
       }).then(user => {
-        if (user.data.loggedIn) {
           this.setState({
             loggedIn:true,
             user: user.data.user
           });
           console.log("sign up success", user.data.user);
-          window.location.href = "/home";
-        } else {
-          console.log("something went wrong with sign up", user.data);
-          this.setState({
-            failureMessage: user.data
-          })
-        }
+          window.location.href = "/";
       });
     }
   }
@@ -86,11 +78,13 @@ class UserProvider extends Component {
     if (!this.state.loggedIn) {
       API.isLoggedIn().then(response => {
         if(response.data.loggedIn) {
-          console.log("loggedIn badge", response.data.user.sharkBadge)
           this.setState({
             loggedIn: true,
             user: response.data.user,
-            isBadge: response.data.user.sharkBadge
+            isSharkBadge: response.data.user.sharkBadge,
+            isConservationBadge: response.data.user.conservationBadge,
+            isReefBadge: response.data.user.reefBadge,
+            isMammalsBadge: response.data.user.mammalsBadge
           })
           console.log("logged in true", response)
         } else {
@@ -113,26 +107,55 @@ class UserProvider extends Component {
     }
   }
 
-  addBadge = (data) => { 
-    
-    console.log("addBadge", data)
-    
-    console.log(data.user.sharkBadge)
-    // let badgeType = event.target.dataset.badgeId;
-    // // console.log(badgeId)
-      API.addBadge({
+  sharkBadge = (data) => { 
+    console.log("shark badge", data.user.sharkBadge)
+      API.sharkBadge({
         id: this.state.user.id,
         sharkBadge: true,
       }).then(user=> {
         console.log("add badge", user)
         this.setState({
-          isBadge: user.data.sharkBadge
+          isSharkBadge: user.data.sharkBadge
         })
-        // this.setState({
-        //   email: this.state.email,
-        //   loggedIn: true,
-        // })
-    //     console.log("addbadge user", this.state)
+     })
+  }
+
+  conservationBadge = (data) => { 
+    console.log("conservation badge", data.user.conservationBadge)
+      API.conservationBadge({
+        id: this.state.user.id,
+        conservationBadge: true,
+      }).then(user=> {
+        console.log("add badge", user)
+        this.setState({
+          isConservationBadge: user.data.conservationBadge
+        })
+     })
+  }
+
+  mammalsBadge = (data) => { 
+    console.log("mammals badge", data.user.mammalsBadge)
+      API.mammalsBadge({
+        id: this.state.user.id,
+        mammalsBadge: true,
+      }).then(user=> {
+        console.log("add badge", user)
+        this.setState({
+          isMammalsBadge: user.data.mammalsBadge
+        })
+     })
+  }
+
+  reefBadge = (data) => { 
+    console.log("add reef badge", data.user.reefBadge)
+      API.reefBadge({
+        id: this.state.user.id,
+        reefBadge: true,
+      }).then(user=> {
+        console.log("add badge", user)
+        this.setState({
+          isReefBadge: user.data.reefBadge
+        })
      })
   }
 
@@ -143,7 +166,10 @@ class UserProvider extends Component {
       handleLogin: this.handleLogin,
       handleSignup: this.handleSignup,
       logout: this.logout,
-      addBadge: this.addBadge,
+      sharkBadge: this.sharkBadge,
+      conservationBadge: this.conservationBadge,
+      reefBadge: this.reefBadge,
+      mammalsBadge: this.mammalsBadge,
       checkState: this.checkState,
       isLoggedIn: this.isLoggedIn
     }

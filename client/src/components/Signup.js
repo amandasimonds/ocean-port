@@ -93,23 +93,16 @@ class Signup extends Component {
                 email: this.state.email,
                 password: this.state.password
             }).then(user => {
-                if (user.data.loggedIn) {
                     this.setState({
                         loggedIn: true,
                         user: user.data.user
                     });
                     console.log("sign up success", user.data.user);
-                    window.location.href = "/login";
-                } else {
-                    console.log("something went wrong with sign up", user.data);
-                    this.setState({
-                        failureMessage: user.data
-                    })
-                }
+                    window.location.href = "/home";
             });
         }
     }
-    // displays the password message if it exists
+
     passwordMessage = () => {
         let message = "at least 8 letters, 1 capital & 1 number"
         if (this.props.password !== "" && !this.state.validPassword && this.state.passwordMessage !== message) {
@@ -172,7 +165,7 @@ class Signup extends Component {
                             <Button
                                 color="primary"
                                 style={{ margin: "1em", padding: "1em", borderRadius: "1em"}}>
-                                Already have an account?  Sign in here
+                                Log in
                             </Button>
                         </Link>
                     
