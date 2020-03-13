@@ -14,7 +14,6 @@ class Question extends React.Component {
     }
 
     render() {
-        
         let listItems = []
         if (Object.keys(this.props.currentQuestion).length > 0) {
             listItems = this.props.currentQuestion.answers.map((choice) =>

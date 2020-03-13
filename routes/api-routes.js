@@ -81,7 +81,7 @@ app.put("/api/badges", function(req, res) {
       id: req.body.id
     }
   }).then(function(dbUser) {
-    res.json(dbUser);
+    res.json(req.body);
   });
 });
 };
