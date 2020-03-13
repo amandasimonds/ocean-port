@@ -92,7 +92,7 @@ class ConservationWrap extends React.Component {
         return (
             <div className="App">
                <div className="title-div">
-                    <span className="quiz-title">Quiz about ocean conservation!</span>
+                    <span className="quiz-title">Conservation Quiz</span>
                </div>
                <p className="details">Let's test your knowledge</p>
                <span className="time-style">Time Remaining: {this.state.seconds}</span>

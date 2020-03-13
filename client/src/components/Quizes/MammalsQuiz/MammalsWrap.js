@@ -92,7 +92,7 @@ class MammalsWrap extends React.Component {
         return (
             <div className="App">
                <div className="title-div">
-                    <span className="quiz-title">Quiz about marine mammals!</span>
+                    <span className="quiz-title">Marine Mammals Quiz</span>
                </div>
                <p className="details">Let's test your knowledge</p>
                <span className="time-style">Time Remaining: {this.state.seconds}</span>
