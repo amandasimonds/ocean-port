@@ -11,7 +11,7 @@ const Badges = () => {
   // render(props){
   return (
     <UserConsumer>
-      {({ data, addBadge, isLoggedIn }) => (
+      {({ data, isLoggedIn, conservationBadge, sharkBadge, reefBadge, mammalsBadge }) => (
         <div>
           {isLoggedIn}
           {/* <h1>Welcome {data.user.email}!</h1> */}
@@ -19,25 +19,78 @@ const Badges = () => {
             
             <Card style={{ 
               width: '18rem', 
-              padding: ".3em", 
+              padding: ".1em", 
+              margin: ".3em",
+              height: "14em",
               justifyContent: 'center' }}>
               <Card.Body>
                 {console.log("----------/n", data)}
                 <Card.Title>Sharks</Card.Title>
-
-                {data.isBadge ? (
+                {data.isSharkBadge ? (
                   <img
-                    src={`${process.env.PUBLIC_URL}/assets/images/badge.png`}
+                    src={`${process.env.PUBLIC_URL}/assets/images/shark.png`}
                     alt="badge"
-                    width="150px"
-                    padding="10px">
+                    style={{width: "120px"}}>
                   </img>
                 ) : ( 
                      <div><Button
                     variant="primary"
-                    onClick={() => { addBadge(data) }}>
-                    Click here to add your Shark Badge!
+                    style={{whiteSpace: "normal"}}
+                    onClick={() => { sharkBadge(data) }}>
+                    Did you finish the quiz and learning page? Click here to add your Shark Badge!
                   </Button></div> 
+                   )}
+              </Card.Body>
+            </Card>
+
+            <Card style={{ 
+              width: '18rem', 
+              padding: ".1em", 
+              margin: ".3em",
+              justifyContent: 'center' }}>
+              <Card.Body>
+                <Card.Title>Conservation</Card.Title>
+                {data.isConservationBadge ? (
+                  <img
+                    src={`${process.env.PUBLIC_URL}/assets/images/conservationbadge.png`}
+                    alt="badge"
+                    style={{width: "120px"}}>
+                  </img>
+                ) : ( 
+                     <div><Button
+                    variant="primary"
+                    style={{whiteSpace: "normal"}}
+                    onClick={() => { conservationBadge(data) }}>
+                      Did you finish the quiz and learning page? Click here to add your Conservation Badge!
+                  </Button>
+                  </div> 
+                   )}
+              </Card.Body>
+            </Card>
+
+            <Card style={{ 
+              width: '18rem', 
+              padding: ".1em", 
+              margin: ".3em",
+              justifyContent: 'center' }}>
+              <Card.Body>
+                <Card.Title>Reef</Card.Title>
+                {data.isReefBadge ? (
+                  <img
+                    src={`${process.env.PUBLIC_URL}/assets/images/reef.svg`}
+                    alt="badge"
+                    style={{width: "120px"}}>
+                  </img>
+                ) : ( 
+                     <div><Button
+                    variant="primary"
+                    style={{whiteSpace: "normal"}}
+                    onClick={() => { reefBadge(data) }}>
+                      
+                      Did you finish the quiz and learning page? Click here to add your Reef Badge!
+                    
+                  </Button>
+                  </div> 
                    )}
 
               </Card.Body>
@@ -45,29 +98,25 @@ const Badges = () => {
 
             <Card style={{ 
               width: '18rem', 
-              padding: ".3em", 
+              padding: ".1em", 
+              margin: ".3em",
               justifyContent: 'center' }}>
               <Card.Body>
-                {console.log("----------/n", data)}
-                <Card.Title>Conservation</Card.Title>
+                <Card.Title>Mammals</Card.Title>
 
-                {data.isBadge ? (
+                {data.isMammalsBadge ? (
                   <img
-                    src={`${process.env.PUBLIC_URL}/assets/images/badge.png`}
+                    src={`${process.env.PUBLIC_URL}/assets/images/mammalsbadge.jpg`}
                     alt="badge"
-                    width="150px"
-                    padding="10px">
+                    style={{width: "120px"}}>
                   </img>
                 ) : ( 
                      <div><Button
                     variant="primary"
-                    style={{
-                    width: "9em",
-                  whiteSpace: "normal"}}
-                    data-value="conservationBadge"
-                    onClick={() => { addBadge(data) }}>
+                    style={{whiteSpace: "normal"}}
+                    onClick={() => { mammalsBadge(data) }}>
                       
-                    Click here to add your Conservation Badge!
+                      Did you finish the quiz and learning page? Click here to add your Mammals Badge!
                     
                   </Button>
                   </div> 
