@@ -9,7 +9,7 @@ const ReefFishInfo = props => {
       <ReefFishWrapper>
         <Card>
           <CardHeader>
-            <h1>Let's learn about Coral Reefs and the fish that live there!</h1>
+            <h1>Coral Reefs</h1>
           </CardHeader>
           <CardBody>
             <div className="block">

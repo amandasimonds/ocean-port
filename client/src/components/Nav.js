@@ -39,8 +39,7 @@ const NavPort = props => {
                 <DropdownItem href="/sharkinfo">Shark Info</DropdownItem>
                 <DropdownItem href="/mammalsinfo">Mammal Info</DropdownItem>
                 <DropdownItem href="/conservationinfo">Conservation Info</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>Reset</DropdownItem>
+                
               </DropdownMenu>
             </UncontrolledDropdown>
             <NavItem>
@@ -55,8 +54,7 @@ const NavPort = props => {
                 <DropdownItem href="/sharkquiz">Shark Quiz</DropdownItem>
                 <DropdownItem href="/mammalsquiz">Mammal Quiz</DropdownItem>
                 <DropdownItem href="/conservationquiz">Conservation Quiz</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>Reset</DropdownItem>
+                
               </DropdownMenu>
             </UncontrolledDropdown>
             <NavItem>
