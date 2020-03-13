@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import { UserConsumer } from "../utils/UserContext"
+import {Text} from "reactstrap"
 
 const Badges = () => {
   // }
@@ -10,45 +11,71 @@ const Badges = () => {
   // render(props){
   return (
     <UserConsumer>
-      {({ data, addBadge, checkState, isLoggedIn }) => (
+      {({ data, addBadge, isLoggedIn }) => (
         <div>
           {isLoggedIn}
           {/* <h1>Welcome {data.user.email}!</h1> */}
-          <Row style={{ justifyContent: 'center' }}>
-            <Card style={{ width: '18rem' }}>
+          <Row style={{ justifyContent: 'center', flexDirection: "row" }}>
+            
+            <Card style={{ 
+              width: '18rem', 
+              padding: ".3em", 
+              justifyContent: 'center' }}>
               <Card.Body>
-                {console.log("----------/n",data)}
-                {/*check the state of the user */}
-                <Button onClick={checkState}>Check State</Button>
-
-                <Card.Title>Shark Quiz</Card.Title>
-                <Card.Text>
-
-                  {/* Score: <span className='score'>{this.state.sharkQuiz}</span>  */}
-                </Card.Text>
-
-                {/* button to simulate adding a badge to this card */}
-                <Button variant="primary" onClick={()=>{ addBadge(data)  } }>Shark Badge...</Button>
+                {console.log("----------/n", data)}
+                <Card.Title>Sharks</Card.Title>
 
                 {data.isBadge ? (
-                  <h2>YOU OWN SHARK BADGES!</h2>
-                ): (
-                <div></div>)}
+                  <img
+                    src={`${process.env.PUBLIC_URL}/assets/images/badge.png`}
+                    alt="badge"
+                    width="150px"
+                    padding="10px">
+                  </img>
+                ) : ( 
+                     <div><Button
+                    variant="primary"
+                    onClick={() => { addBadge(data) }}>
+                    Click here to add your Shark Badge!
+                  </Button></div> 
+                   )}
 
               </Card.Body>
             </Card>
 
-            <Card style={{ width: '18rem' }}>
+            <Card style={{ 
+              width: '18rem', 
+              padding: ".3em", 
+              justifyContent: 'center' }}>
               <Card.Body>
-                <Card.Title>Quiz 4</Card.Title>
-                <Card.Text>
+                {console.log("----------/n", data)}
+                <Card.Title>Conservation</Card.Title>
 
-                  Score: <span className='score'></span>
-                </Card.Text>
-                <Button variant="primary">Back To Quiz</Button>
+                {data.isBadge ? (
+                  <img
+                    src={`${process.env.PUBLIC_URL}/assets/images/badge.png`}
+                    alt="badge"
+                    width="150px"
+                    padding="10px">
+                  </img>
+                ) : ( 
+                     <div><Button
+                    variant="primary"
+                    style={{
+                    width: "9em",
+                  whiteSpace: "normal"}}
+                    data-value="conservationBadge"
+                    onClick={() => { addBadge(data) }}>
+                      
+                    Click here to add your Conservation Badge!
+                    
+                  </Button>
+                  </div> 
+                   )}
 
               </Card.Body>
             </Card>
+
           </Row>
 
 

@@ -9,23 +9,23 @@ const Home = (props) => {
   
   return (
     <UserConsumer>
-      {({ data, logout, addBadge }) => (
+      {({ data, logout }) => (
         
         <div>
           
           {(data.loggedIn) ? (
 
             //if they are logged in, show this page
-            <Jumbotron>
+            <Jumbotron style={{padding: "4em" }}>
               <p className="lead">
-              <Button color="success" value="SharkQuiz" data="Shark Quiz" text="Shark Quiz" onClick={addBadge}>Add Badge Yay</Button>
               </p>
               <h1 className="display-3">Hello, welcome to OceanPort, {data.user.email}!</h1>
-              <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.</p>
+              <p className="lead">Go to the Navigation Bar at the top to learn about the ocean, take quizes, and add and view your badges!</p>
               <hr className="my-2" />
-              <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
               <p className="lead">
-                <Button color="primary" onClick={logout}>Logout</Button>
+                <Button color="primary" 
+                style={{margin: "1em", padding: "1em", borderRadius: "1em"}}
+                onClick={logout}>Logout</Button>
               </p>
               
             </Jumbotron>
@@ -33,10 +33,22 @@ const Home = (props) => {
           ) : (
 
             //if user is not logged in, show this:
-              <Jumbotron>
+              <Jumbotron
+              style={{padding: "4em" }}>
+
                 <h1 className="display-3">Hello, welcome to OceanPort!</h1>
-                <Link to="/login"><Button color="primary">Log in</Button></Link>
-                  <Link to="/signup"><Button color="primary">Don't have an account? Click here to sign up!</Button></Link>
+
+                <Link to="/login">
+                  <Button color="primary" 
+                style={{margin: "1em", padding: "1em", borderRadius: "1em"}}>
+                  Log in
+                  </Button></Link>
+
+                  <Link to="/signup">
+                    <Button color="success"
+                    style={{margin: "1em", padding: "1em", borderRadius: "1em"}}>
+                      Don't have an account? Click here to sign up!
+                      </Button></Link>
                   
               </Jumbotron>
                 

@@ -15,11 +15,10 @@ import Learn from "./components/Learn/Learn"
 import NavPort from "./components/Nav"
 import Home from "./components/Home"
 import UserProvider from "./utils/UserContext"
-// import {UserProvider} from "./utils/UserContext"
 import Auth from "./pages/Auth"
 import Badges from './components/Badges'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter, Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css"
 function App(props) {
 
@@ -30,9 +29,7 @@ function App(props) {
   const user = props.user
 
   console.log("app", user)
-
-
-
+  
   return (
     <div className="homePort">
       <NavPort name="" name1="Tyson"/>
