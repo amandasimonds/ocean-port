@@ -1,6 +1,6 @@
 # OceanPort
 
-Educational app that engages young audiences in learning about the ocean through videos, reading, and gamification.
+Educational app that engages young audiences in learning about the ocean through a variety of interactions, including quizzes, earning badges, reading, and visuals.
 
 - Open the link https://oceanport.herokuapp.com/ 
 - Create an OceanPort account, and go to the learning tab. 
