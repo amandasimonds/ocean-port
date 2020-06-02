@@ -14,7 +14,6 @@ const Badges = () => {
       {({ data, isLoggedIn, conservationBadge, sharkBadge, reefBadge, mammalsBadge }) => (
         <div>
           {isLoggedIn}
-          {/* <h1>Welcome {data.user.email}!</h1> */}
           <Row style={{ justifyContent: 'center', flexDirection: "row" }}>
             
             <Card style={{ 
@@ -25,7 +24,7 @@ const Badges = () => {
               justifyContent: 'center' }}>
               <Card.Body>
                 {console.log("----------/n", data)}
-                <Card.Title>Sharks</Card.Title>
+                <Card.Title className="badge-title">Sharks</Card.Title>
                 {data.isSharkBadge ? (
                   <img
                     src={`${process.env.PUBLIC_URL}/assets/images/shark.png`}
@@ -36,7 +35,8 @@ const Badges = () => {
                      <div><Button
                     variant="primary"
                     style={{whiteSpace: "normal"}}
-                    onClick={() => { sharkBadge(data) }}>
+                    onClick={() => { sharkBadge(data) }}
+                    className="badge-button">
                     Did you finish the quiz and learning page? Click here to add your Shark Badge!
                   </Button></div> 
                    )}
@@ -47,9 +47,10 @@ const Badges = () => {
               width: '18rem', 
               padding: ".1em", 
               margin: ".3em",
-              justifyContent: 'center' }}>
+              justifyContent: 'center' }}
+              >
               <Card.Body>
-                <Card.Title>Conservation</Card.Title>
+                <Card.Title className="badge-title">Conservation</Card.Title>
                 {data.isConservationBadge ? (
                   <img
                     src={`${process.env.PUBLIC_URL}/assets/images/conservationbadge.png`}
@@ -60,7 +61,8 @@ const Badges = () => {
                      <div><Button
                     variant="primary"
                     style={{whiteSpace: "normal"}}
-                    onClick={() => { conservationBadge(data) }}>
+                    onClick={() => { conservationBadge(data) }}
+                    className="badge-button">
                       Did you finish the quiz and learning page? Click here to add your Conservation Badge!
                   </Button>
                   </div> 
@@ -74,7 +76,7 @@ const Badges = () => {
               margin: ".3em",
               justifyContent: 'center' }}>
               <Card.Body>
-                <Card.Title>Reef</Card.Title>
+                <Card.Title className="badge-title">Reef</Card.Title>
                 {data.isReefBadge ? (
                   <img
                     src={`${process.env.PUBLIC_URL}/assets/images/reef.svg`}
@@ -85,7 +87,8 @@ const Badges = () => {
                      <div><Button
                     variant="primary"
                     style={{whiteSpace: "normal"}}
-                    onClick={() => { reefBadge(data) }}>
+                    onClick={() => { reefBadge(data) }}
+                    className="badge-button">
                       
                       Did you finish the quiz and learning page? Click here to add your Reef Badge!
                     
@@ -102,7 +105,7 @@ const Badges = () => {
               margin: ".3em",
               justifyContent: 'center' }}>
               <Card.Body>
-                <Card.Title>Mammals</Card.Title>
+                <Card.Title className="badge-title">Mammals</Card.Title>
 
                 {data.isMammalsBadge ? (
                   <img
@@ -114,7 +117,8 @@ const Badges = () => {
                      <div><Button
                     variant="primary"
                     style={{whiteSpace: "normal"}}
-                    onClick={() => { mammalsBadge(data) }}>
+                    onClick={() => { mammalsBadge(data) }}
+                    className="badge-button">
                       
                       Did you finish the quiz and learning page? Click here to add your Mammals Badge!
                     
