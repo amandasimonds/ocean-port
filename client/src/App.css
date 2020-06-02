@@ -3,18 +3,53 @@
     background-color: aqua;
 width: 100%;
 height: 100%;
-font-size: 20px;
+font-size: 25px;
 font-family: 'Indie Flower', cursive;
-
-
   }
-  .App {
-  text-align: center;
+
+  .dropdown-menu{
+    font-size:.7em;
+  }
+
+  .dropdown-toggle{
+    margin-right: 80px;
+  }
+
+.form-style {
+  font-size: 0.9em;
+  font-family: arial;
+  width:70%
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.form-style h3{
+  font-size: 1em;
+  font-family: "Indie Flower", cursive;
+}
+
+.loginTitle{
+  font-size: 1.4em;
+}
+
+.badge-button{
+  font-size: 0.7em;
+  text-transform: none;
+}
+
+.badge-title{
+  font-size: 1em;
+  text-align:center;
+}
+
+.button{
+  font-size: 0.8em;
+  text-transform: none;
+  margin: 0.7em; 
+  padding: 0.7em;
+  border-radius: 1em;
+}
+
+  .App {
+  text-align: center;
 }
 
 .App-header {
@@ -27,12 +62,6 @@ font-family: 'Indie Flower', cursive;
 .App-intro {
   font-size: large;
 }
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 
 .homePort{
   background-color: aquamarine;
