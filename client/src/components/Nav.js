@@ -28,26 +28,23 @@ const NavPort = props => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
-            <NavItem>
-              <NavLink>Learning</NavLink>
-            </NavItem>
+
             <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
+              <DropdownToggle nav caret className="dropdown-toggle">
+                Learning
                 {props.name}
               </DropdownToggle>
-              <DropdownMenu right>
+              <DropdownMenu right className="dropdown-menu">
                 <DropdownItem href="/reeffishinfo">Reef Info</DropdownItem>
                 <DropdownItem href="/sharkinfo">Shark Info</DropdownItem>
                 <DropdownItem href="/mammalsinfo">Mammal Info</DropdownItem>
                 <DropdownItem href="/conservationinfo">Conservation Info</DropdownItem>
-                
               </DropdownMenu>
             </UncontrolledDropdown>
-            <NavItem>
-              <NavLink>Quizzes</NavLink>
-            </NavItem>
+
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
+                Quizzes
                 {props.name}
               </DropdownToggle>
               <DropdownMenu right>
@@ -55,9 +52,9 @@ const NavPort = props => {
                 <DropdownItem href="/sharkquiz">Shark Quiz</DropdownItem>
                 <DropdownItem href="/mammalsquiz">Mammal Quiz</DropdownItem>
                 <DropdownItem href="/conservationquiz">Conservation Quiz</DropdownItem>
-                
               </DropdownMenu>
             </UncontrolledDropdown>
+            
             <NavItem>
               <NavLink href="/badges/">Scores and Badges</NavLink>
             </NavItem>

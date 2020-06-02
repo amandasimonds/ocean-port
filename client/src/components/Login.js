@@ -7,15 +7,16 @@ function Login(props) {
     <div>
       <Jumbotron
         style={{
-          padding: "5em"
-        }}>
+          padding: "2em"
+        }}  className="homePort">
 
-        <Form>
+        <Form className="form-style">
           <h2>Log in</h2>
           <hr></hr>
           <FormGroup>
             <Label for="email"><h3>Email</h3></Label>
             <Input
+            className="form-style"
               type="text"
               name="email"
               id="email"
@@ -28,6 +29,7 @@ function Login(props) {
           <FormGroup>
             <Label for="password"><h3>Password</h3></Label>
             <Input
+            className="form-style"
               type="password"
               name="password"
               id="password"
@@ -40,14 +42,14 @@ function Login(props) {
           <Button
             onClick={props.handleLogin}
             color="primary"
-            style={{ margin: "1em", padding: "1em", borderRadius: "1em" }}
+            className="button"
           >Login
           </Button>
 
           <Link to="/signup">
           <Button
             color="success"
-            style={{ margin: "1em", padding: "1em", borderRadius: "1em" }}>
+            className="button">
               Dont have an account? Sign up here!
           </Button>
             </Link>

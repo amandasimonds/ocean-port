@@ -126,17 +126,13 @@ class Signup extends Component {
         return (
 
             <div>
-                <Jumbotron
-                style={{
-                    padding: "5em"
-                  }}>
-
-                    <h2 className="loginTitle">Signup</h2>
+                <Jumbotron className="homePort" style={{padding: "2em"}}>
+                    <h2 className="loginTitle">Sign Up</h2>
                     <hr />
-                    <Form>
+                    <Form className="form-style">
                         <FormGroup>
                             <Label for="email"><h3>Email</h3></Label>
-                            <Input type="email" name="email" id="email" 
+                            <Input className="form-style" type="email" name="email" id="email" 
                             placeholder="email@email.com" 
                             style={{ marginTop: ".5em" }}
                             value={this.email} 
@@ -145,7 +141,7 @@ class Signup extends Component {
                         </FormGroup>
                         <FormGroup>
                             <Label for="password"><h3>Password</h3></Label>
-                            <Input type="password" name="password" 
+                            <Input className="form-style" type="password" name="password" 
                             id="password" placeholder="password" 
                             style={{ marginTop: ".5em" }}
                             value={this.password} 
@@ -153,18 +149,12 @@ class Signup extends Component {
                             valid={this.state.validPassword} />
                         </FormGroup>
 
-                        <br></br>
-
-                        <Button onClick={this.handleSignup}
-                            color="success"
-                            style={{ margin: "1em", padding: "1em", borderRadius: "1em" }}>
+                        <Button className="button" onClick={this.handleSignup} color="success">
                             Signup
                         </Button>
 
                         <Link to="/login">
-                            <Button
-                                color="primary"
-                                style={{ margin: "1em", padding: "1em", borderRadius: "1em"}}>
+                            <Button className="button" color="primary">
                                 Log in
                             </Button>
                         </Link>
